@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const cors = require('cors');
 
 const userRouter = require('./src/user')
+const movieRouter = require('./src/movie')
 
 // DB Connection
 mongoose.connect(process.env.DB_CONNECT,
@@ -17,7 +18,7 @@ const app = express()
 app.use(cors());
 app.use(express.json());
 
-//########### API add user <TEST DB> ######
+// ########### API add user <TEST DB> ######
 const Movie = require('./model/Movie')
 app.use('/movie',async function add(req,res){
     const {
@@ -44,6 +45,7 @@ app.use('/movie',async function add(req,res){
 // ##########################################
 
 app.use('/api/user', userRouter);
+app.use('/api', movieRouter);
 
 app.listen(process.env.PORT, () => {
     console.log('Listening on port ' +process.env.PORT)
