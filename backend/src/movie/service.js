@@ -9,6 +9,17 @@ async function topSix(movies) {
     }
     return  topMovies
 }
+
+async function aboveSeven(movies) {
+    let moviesAboveSeven = []
+    for (const movie of movies) {
+        if (movie.vote_average < 7) continue ;
+        moviesAboveSeven.push(movie)
+    }
+    return  moviesAboveSeven
+}
+
 module.exports = {
-    topSix
+    topSix,
+    aboveSeven
   }
