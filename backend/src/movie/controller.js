@@ -57,9 +57,23 @@ async function getMovies2022(req, res) {
   }
 }
 
+async function getTvSeriesPopular(req, res) {
+  try {
+    const apiResponse = await fetch(
+      "https://api.themoviedb.org/3/tv/popular?api_key="+process.env.API_KEY
+    )
+    const apiResponseJson = await apiResponse.json()
+    const tvSeries = apiResponseJson.results
+    res.send({tvSeries})
+  } catch (error) {
+    res.status(500).send('Somthing went wrong')
+  }
+}
+
 module.exports = {
     getAllMovies,
     getTopMovies,
     getMoviesSevenStarOrAbove,
-    getMovies2022
+    getMovies2022,
+    getTvSeriesPopular
 }
