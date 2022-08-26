@@ -13,6 +13,11 @@
   }
 }
 
+/* Backgroud Color for the App */
+:root{
+  background-color: #f8f9fa;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
