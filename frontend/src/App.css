@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #f8f9fa;
 }
 
 .App-logo {
@@ -40,4 +41,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.top-movies-wrapper{
+  display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie-card-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-img-overlay{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  height: fit-content;
 }
