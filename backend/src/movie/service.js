@@ -19,7 +19,17 @@ async function aboveSeven(movies) {
     return  moviesAboveSeven
 }
 
+async function release2022(movies) {
+    let movies2022 = []
+    for (const movie of movies) {
+        if (movie.release_date.slice(0, 4) !== '2022') continue
+        movies2022.push(movie)
+    }
+    return movies2022
+}
+
 module.exports = {
     topSix,
-    aboveSeven
+    aboveSeven,
+    release2022
   }

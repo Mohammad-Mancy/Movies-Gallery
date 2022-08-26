@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const { topSix, aboveSeven } = require('./service')
+const { topSix, aboveSeven, release2022 } = require('./service')
 
 async function getAllMovies(req, res) {
     try {
@@ -43,8 +43,23 @@ async function getMoviesSevenStarOrAbove(req, res) {
   }
 }
 
+async function getMovies2022(req, res) {
+  try {
+    const apiResponse = await fetch(
+      "https://api.themoviedb.org/3/movie/popular?api_key="+process.env.API_KEY
+    )
+    const apiResponseJson =await apiResponse.json()
+    const movies = apiResponseJson.results
+    const neweset = await release2022(movies)
+    res.send({neweset})
+  }catch(err) {
+    res.status(500).send('Somthing went wrong')
+  }
+}
+
 module.exports = {
     getAllMovies,
     getTopMovies,
-    getMoviesSevenStarOrAbove
+    getMoviesSevenStarOrAbove,
+    getMovies2022
 }
