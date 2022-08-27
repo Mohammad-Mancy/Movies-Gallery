@@ -68,3 +68,7 @@
 .card-top-rated{
   cursor: pointer;
 }
+
+h1{
+  font-family: 'Pattaya', sans-serif;
+}

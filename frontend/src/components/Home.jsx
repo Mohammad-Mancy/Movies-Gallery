@@ -28,7 +28,7 @@ function Home() {
       handleTopMovies();
     },[]);
   
-    if (!movies) {
+    if (movies.length === 0) {
         return(
           <Spinner animation="grow" />
       )}
