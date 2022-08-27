@@ -90,3 +90,16 @@ a{
 .logo-footer-img:hover{
   cursor: pointer;
 }
+
+.login-btn{
+  color: #000 !important;
+  text-decoration: none !important;
+}
+
+.signup-link{
+  margin-right: auto !important;
+}
+
+.signup-link:hover{
+  color: #0D6EFD !important;
+}

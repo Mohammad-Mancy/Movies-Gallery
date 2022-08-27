@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Login from './modal/Login';
 
 function NavScroll() {
   return (
@@ -20,13 +21,15 @@ function NavScroll() {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/main/popular-movies">Popular Movies</Nav.Link>
             <NavDropdown title="More" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Account</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                My Gallery
+              <NavDropdown.Item href="#action3" disabled >
+                <span style={{color:'grey'}}>Account</span>
+                </NavDropdown.Item>
+              <NavDropdown.Item href="#action4" disabled >
+                <span style={{color:'grey'}}>My Gallery</span>
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Logout
+              <NavDropdown.Item>
+                  <Login />
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
