@@ -43,7 +43,7 @@
   }
 }
 
-.top-movies-wrapper,.main-page-section-two{
+.top-movies-wrapper,.main-page-section-two,.popular-movies-wrapper{
   display: flex;
     flex-wrap: wrap;
     gap: 20px;

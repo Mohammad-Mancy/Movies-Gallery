@@ -27,7 +27,6 @@ function Home() {
     React.useEffect ( () => {
       handleTopMovies();
     },[]);
-    console.log(movies)
   
     if (!movies) {
         return(
