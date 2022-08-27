@@ -5,7 +5,7 @@ import notFoundImage from './../assets/notfound.png'
 function TopMovieCard({title,overview,image,release_date,vote_average,original_language}) {
   return (
     <Card style={{ width: '30rem', alignSelf:'flex-start'}}>
-      {image !== ''?
+      {image?
       <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/${image}`}/>
       :
       <Card.Img variant="top" src={notFoundImage} />

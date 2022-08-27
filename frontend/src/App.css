@@ -43,7 +43,7 @@
   }
 }
 
-.top-movies-wrapper,.main-page-section-two,.popular-movies-wrapper{
+.top-movies-wrapper,.main-page-section-two,.popular-movies-wrapper,.top-rated-popular-movies-wrapper{
   display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -71,4 +71,9 @@
 
 h1{
   font-family: 'Pattaya', sans-serif;
+}
+
+a{
+  color: #000 !important;
+  text-decoration: none !important;
 }
