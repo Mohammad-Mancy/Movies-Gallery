@@ -5,6 +5,7 @@ import MovieTopRatedCollection from './MovieTopRatedCollection'
 import Movies2022Card from './Movie2022Card';
 import TvSeriesCard from './TvSeriesCard'
 import Spinner from 'react-bootstrap/Spinner';
+import { Footer } from './Footer';
 
 function Home() {
     const [movies,setMovies] = React.useState([])
@@ -56,6 +57,7 @@ function Home() {
       <Movies2022Card />
       <TvSeriesCard />
     </div>
+    <Footer />
     </>
   )
 }

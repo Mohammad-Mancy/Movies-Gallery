@@ -2,6 +2,7 @@ import React from 'react'
 import MovieCard from './../MovieCard'
 import NavBar from './../NavBar'
 import Spinner from 'react-bootstrap/Spinner';
+import { Footer } from '../Footer';
 
 function TvSeries() {
 
@@ -48,6 +49,7 @@ function TvSeries() {
             />
         ))}
         </div>
+        <Footer />
     </div>
   )
 }
