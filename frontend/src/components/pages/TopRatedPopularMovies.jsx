@@ -34,6 +34,7 @@ function TopRatedPopularMovies() {
   return (
     <div>
         <NavBar />
+        <h1>Top-Rated Popular Movies</h1>
         <div className='top-rated-popular-movies-wrapper'>
         {movies.map(({id,overview,poster_path,release_date,title,vote_average,original_language}) => (
             <MovieCard

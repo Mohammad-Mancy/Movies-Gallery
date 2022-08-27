@@ -3,19 +3,19 @@ import MovieCard from './../MovieCard'
 import NavBar from './../NavBar'
 import Spinner from 'react-bootstrap/Spinner';
 
-function Movies2022() {
+function TvSeries() {
 
-    const [movies, setMovies] = React.useState([])
+    const [tvSeries, setTvSeries] = React.useState([])
 
-    let handleMovies2022 = async () => {
+    let handleTvSeries = async () => {
         try {
-            let res = await fetch ("http://localhost:3000/api/movies/2022",{
+            let res = await fetch ("http://localhost:3000/api/tv/series",{
                 method : 'GET',
                 headers : {'Content-type' : 'application/json'}
             })
             const data = await res.json();
             if (res.status === 200) {
-                setMovies(data.neweset)
+                setTvSeries(data.tvSeries)
             }
         } catch (error) {
             console.log(error)
@@ -23,10 +23,10 @@ function Movies2022() {
     }
 
     React.useEffect ( () => {
-        handleMovies2022();
+        handleTvSeries();
       },[]);
 
-    if (!movies) {
+    if (!tvSeries) {
     return(
         <Spinner animation="grow" />
     )}
@@ -34,15 +34,15 @@ function Movies2022() {
   return (
     <div>
         <NavBar />
-        <h1>Movies Released In 2022</h1>
-        <div className='released-2022-movies-wrapper'>
-        {movies.map(({id,overview,poster_path,release_date,title,vote_average,original_language}) => (
+        <h1>TV Series</h1>
+        <div className='tv-series-wrapper'>
+        {tvSeries.map(({id,overview,poster_path,first_air_date,name,vote_average,original_language}) => (
             <MovieCard
             key={id}
-            title={title}
+            title={name}
             overview={overview}
             image={poster_path}
-            release_date={release_date}
+            release_date={first_air_date}
             vote_average={vote_average}
             original_language={original_language}
             />
@@ -52,4 +52,4 @@ function Movies2022() {
   )
 }
 
-export default Movies2022    
+export default TvSeries    

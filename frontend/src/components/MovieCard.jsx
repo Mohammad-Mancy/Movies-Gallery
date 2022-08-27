@@ -21,7 +21,7 @@ function TopMovieCard({title,overview,image,release_date,vote_average,original_l
         <Card.Text><strong>{vote_average}</strong></Card.Text>
         </div>
 
-        <Card.Text  style={{ height: '58%' , overflow: 'hidden' }}>{overview}</Card.Text>
+        <Card.Text  style={{ height: '58%' , overflow: 'hidden' , color: 'grey'}}>{overview}</Card.Text>
         <Button variant="primary">View Details</Button>
       </Card.Body>
     </Card>

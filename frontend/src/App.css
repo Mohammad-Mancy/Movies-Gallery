@@ -43,7 +43,7 @@
   }
 }
 
-.top-movies-wrapper,.main-page-section-two,.popular-movies-wrapper,.top-rated-popular-movies-wrapper,.released-2022-movies-wrapper{
+.top-movies-wrapper,.main-page-section-two,.popular-movies-wrapper,.top-rated-popular-movies-wrapper,.released-2022-movies-wrapper,.tv-series-wrapper{
   display: flex;
     flex-wrap: wrap;
     gap: 20px;

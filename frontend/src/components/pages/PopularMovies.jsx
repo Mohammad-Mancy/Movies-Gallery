@@ -34,6 +34,7 @@ function PopularMovies() {
   return (
     <div>
         <NavBar />
+        <h1>Popular Movies</h1>
         <div className='popular-movies-wrapper'>
         {movies.map(({id,overview,poster_path,release_date,title,vote_average,original_language}) => (
             <MovieCard
