@@ -64,3 +64,7 @@
   align-items: baseline;
   height: fit-content;
 }
+
+.card-top-rated{
+  cursor: pointer;
+}

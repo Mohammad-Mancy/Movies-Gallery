@@ -2,6 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar';
 import MovieCard from './components/MovieCard'
+import MovieTopRatedCollection from './components/MovieTopRatedCollection'
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
           <MovieCard />
           <MovieCard />
           <MovieCard />
+      </div>
+      <div>
+        <MovieTopRatedCollection />
       </div>
     </div>
   );
