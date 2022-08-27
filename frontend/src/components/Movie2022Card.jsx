@@ -1,16 +1,16 @@
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import topRated from './../assets/top-rated.jpg'
+import movie2022 from './../assets/movies2022.jpg'
 
-function MovieTopRatedCard() {
+function Movies2022() {
   return (
     <Row xs={1} md={1} className="g-4">
         <Col>
           <Card className="card-top-rated">
-            <Card.Img variant="top" src={topRated} style={{width:'477px',height:'477px'}}/>
+            <Card.Img variant="top" src={movie2022} style={{width:'477px',height:'477px'}}/>
             <Card.Body>
-              <Card.Title>Top Rated Popular Movies</Card.Title>
+              <Card.Title>Movies Released in 2022</Card.Title>
             </Card.Body>
           </Card>
         </Col>
@@ -18,4 +18,4 @@ function MovieTopRatedCard() {
   );
 }
 
-export default MovieTopRatedCard;
+export default Movies2022;

@@ -43,7 +43,7 @@
   }
 }
 
-.top-movies-wrapper{
+.top-movies-wrapper,.main-page-section-two{
   display: flex;
     flex-wrap: wrap;
     gap: 20px;

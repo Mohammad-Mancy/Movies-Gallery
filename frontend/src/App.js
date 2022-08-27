@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar';
 import MovieCard from './components/MovieCard'
 import MovieTopRatedCollection from './components/MovieTopRatedCollection'
+import Movies2022Card from './components/Movie2022Card';
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
           <MovieCard />
           <MovieCard />
       </div>
-      <div>
+      <div className='main-page-section-two'>
         <MovieTopRatedCollection />
+        <Movies2022Card />
       </div>
     </div>
   );
