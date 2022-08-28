@@ -3,8 +3,12 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import Signup from './Signup';
+import { useDispatch } from 'react-redux'
+import { setToken } from './../../features/user'
 
 function Login() {
+
+  const dispatch = useDispatch();
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -26,7 +30,7 @@ function Login() {
       })
       const data = await res.json()
       if (res.status === 200) {
-        console.log(data.token)
+        dispatch(setToken(data.token))
         handleClose()
       }
     } catch (error) {

@@ -5,8 +5,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Login from './modal/Login';
+import { useSelector } from 'react-redux';
 
 function NavScroll() {
+  const token = useSelector((state) => state.token.value)
+  console.log(token)
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
