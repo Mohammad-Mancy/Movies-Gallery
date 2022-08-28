@@ -6,10 +6,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Login from './modal/Login';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux'
+import { clearToken } from './../features/user'
 
 function NavScroll() {
   const token = useSelector((state) => state.token.value)
   console.log(token)
+  const dispatch = useDispatch();
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -32,7 +35,15 @@ function NavScroll() {
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item>
-                  <Login />
+                {!token?
+                <Login />
+                :
+                <h6 
+                style={{textAlign:'center'}}
+                onClick={() =>{
+                  dispatch(clearToken())
+                }}>Logout</h6>
+                }
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
