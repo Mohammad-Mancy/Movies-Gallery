@@ -94,10 +94,12 @@ a{
 .login-btn{
   color: #000 !important;
   text-decoration: none !important;
+  width: inherit;
 }
 
 .signup-link{
   margin-right: auto !important;
+  cursor: pointer;
 }
 
 .signup-link:hover{
