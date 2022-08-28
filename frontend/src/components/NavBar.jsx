@@ -6,8 +6,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Login from './modal/Login';
 import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux'
-import { clearToken } from './../features/user'
+import { useDispatch } from 'react-redux';
+import { clearToken } from './../features/user';
+import { reactLocalStorage } from 'reactjs-localstorage';
 
 function NavScroll() {
   const token = useSelector((state) => state.token.value)
@@ -42,6 +43,7 @@ function NavScroll() {
                 style={{textAlign:'center'}}
                 onClick={() =>{
                   dispatch(clearToken())
+                  reactLocalStorage.set('token',"")
                 }}>Logout</h6>
                 }
               </NavDropdown.Item>

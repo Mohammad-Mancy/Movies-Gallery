@@ -5,6 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import Signup from './Signup';
 import { useDispatch } from 'react-redux'
 import { setToken } from './../../features/user'
+import {reactLocalStorage} from'reactjs-localstorage'
 
 function Login() {
 
@@ -31,6 +32,7 @@ function Login() {
       const data = await res.json()
       if (res.status === 200) {
         dispatch(setToken(data.token))
+        reactLocalStorage.set('token',data.token)
         handleClose()
       }
     } catch (error) {

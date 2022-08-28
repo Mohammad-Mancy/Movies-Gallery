@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { reactLocalStorage } from 'reactjs-localstorage'
 
 
-const initialStateValue = ""
+const initialStateValue = reactLocalStorage.get('token') || "" ;
 
 export const userSlice = createSlice({
     name: "token",
@@ -11,7 +12,7 @@ export const userSlice = createSlice({
             state.value = action.payload
         },
         clearToken: (state) => {
-            state.value = initialStateValue
+            state.value = ""
         }
     }
 })
