@@ -12,7 +12,6 @@ import { reactLocalStorage } from 'reactjs-localstorage';
 
 function NavScroll() {
   const token = useSelector((state) => state.token.value)
-  console.log(token)
   const dispatch = useDispatch();
   return (
     <Navbar bg="light" expand="lg">
@@ -28,12 +27,27 @@ function NavScroll() {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/main/popular-movies">Popular Movies</Nav.Link>
             <NavDropdown title="More" id="navbarScrollingDropdown">
+              {!token?
+              <>
               <NavDropdown.Item href="#action3" disabled >
-                <span style={{color:'grey'}}>Account</span>
-                </NavDropdown.Item>
-              <NavDropdown.Item href="#action4" disabled >
-                <span style={{color:'grey'}}>My Gallery</span>
+              <span style={{color:'grey'}}>Account</span>
               </NavDropdown.Item>
+              <NavDropdown.Item href="#action4" disabled >
+              <span style={{color:'grey'}}>My Gallery</span>
+              </NavDropdown.Item>
+              </>
+              :
+              <>
+              <NavDropdown.Item href="#action3">
+              <span >Account</span>
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action4">
+              <span >My Gallery</span>
+              </NavDropdown.Item>
+              </>
+              }
+
+
               <NavDropdown.Divider />
               <NavDropdown.Item>
                 {!token?
