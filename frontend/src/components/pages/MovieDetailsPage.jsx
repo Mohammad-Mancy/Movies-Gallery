@@ -21,23 +21,7 @@ function MovieDetailsPage() {
     const [vote_average,setVote_average] = useState()
     const [backdrop_path,setBackdrop_path] = useState()
 
-    // const [actors,setActors] = useState()
-    // MockServer
-const actors =[{
-    "adult":false,
-    "gender": 2,
-    "id": 7470,
-    "known_for_department": "Acting",
-    "name":"Meat Loaf",
-    "original_name": "Meat Loaf",
-    "popularity":2.67,
-    "profile_path": "/k9tJGdMkzOe17YH2ZCQjNnX5YLz.jpg",
-    "cast_id": 7,
-    "character": "Robert \"Bob\" Paulson",
-    "credit_id": "52fe4250c3a36847f80149ff",
-    "order": 3
-}]
-//   _____________________________________________
+    const [actors,setActors] = useState()
 
     let handleMoviesDetails = async () => {
         try {
@@ -65,7 +49,17 @@ const actors =[{
 
     let handleActors = async () => {
         try {
-            // Logic goes here
+            let res = await fetch("http://localhost:3000/api/movie/credits",{
+                method : 'POST',
+                headers : {'Content-Type' : 'application/json'},
+                body : JSON.stringify({
+                    movie_id:location.state.id
+                })
+            })
+            const data = await res.json()
+            if (res.status === 200) {
+                setActors(data.response)
+            }
         } catch (error) {
             console.log(error)
         }
@@ -76,7 +70,7 @@ const actors =[{
         handleMoviesDetails();
         handleActors();
       });
-    if(!poster_path||!vote_average||!backdrop_path) {
+    if(!poster_path||!vote_average||!backdrop_path||!actors) {
         return <Spinner animation="grow" />;
     }
   return (

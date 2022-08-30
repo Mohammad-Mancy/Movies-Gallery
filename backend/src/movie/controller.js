@@ -93,7 +93,7 @@ async function getMovieActors(req, res) {
     const apiResponseJson = await apiResponse.json()
     const result = apiResponseJson.cast
     const response = await TopBilledCast(result)
-    res.status(200).send(response)
+    res.status(200).send({response})
   } catch (error) {
     console.log(error)
   }
