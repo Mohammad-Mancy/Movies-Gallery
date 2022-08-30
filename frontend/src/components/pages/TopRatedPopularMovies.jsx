@@ -39,7 +39,8 @@ function TopRatedPopularMovies() {
         <div className='top-rated-popular-movies-wrapper'>
         {movies.map(({id,overview,poster_path,release_date,title,vote_average,original_language}) => (
             <MovieCard
-            key={id+1} //To be unique and i'll remove it when using it
+            key={id+1} 
+            id={id}
             title={title}
             overview={overview}
             image={poster_path}

@@ -42,6 +42,7 @@ function Home() {
     {movies.map(({id,overview,poster_path,release_date,title,vote_average,original_language}) => (
         <MovieCard
         key={id}
+        id={id}
         title={title}
         overview={overview}
         image={poster_path}

@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import NavBar from './../NavBar'
 import image from './../../assets/top-rated.jpg'
 import Button from 'react-bootstrap/Button';
+import { useLocation } from 'react-router-dom';
 
 
 function MovieDetailsPage() {
+    const location = useLocation()
+    console.log(location.state.id)
+
+    let handleMoviesDetails = () => {
+        try {
+            // Logic goes here      
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    // fetch the data of movie on page load
+    useEffect ( () => {
+        handleMoviesDetails();
+      },[]);
   return (
     <div>
         <NavBar />

@@ -40,6 +40,7 @@ function TvSeries() {
         {tvSeries.map(({id,overview,poster_path,first_air_date,name,vote_average,original_language}) => (
             <MovieCard
             key={id}
+            id={id}
             title={name}
             overview={overview}
             image={poster_path}

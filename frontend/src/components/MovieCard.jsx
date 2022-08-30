@@ -3,11 +3,15 @@ import Card from 'react-bootstrap/Card';
 import notFoundImage from './../assets/notfound.png'
 import { useNavigate } from 'react-router-dom'
 
-function TopMovieCard({title,overview,image,release_date,vote_average,original_language}) {
+function TopMovieCard({id,title,overview,image,release_date,vote_average,original_language}) {
 
   const navigation = useNavigate()
   const navigate = () => {
-    navigation('/movies/movie-details-page')
+    navigation('/movies/movie-details-page',{
+      state:{
+        id:id
+      }
+    })
   }
 
   return (
