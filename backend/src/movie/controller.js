@@ -70,10 +70,25 @@ async function getTvSeriesPopular(req, res) {
   }
 }
 
+async function getMoviesDetailsById(req, res) {
+  try {
+    const id = req.body.id
+    const apiResponse = await fetch(
+      "https://api.themoviedb.org/3/movie/"+id+"?api_key="+process.env.API_KEY
+    )
+    const apiResponseJson = await apiResponse.json()
+    res.status(200).send(apiResponseJson)
+
+  } catch (error) {
+    res.status(500).send('Somthing went wrong')
+  }
+}
+
 module.exports = {
     getAllMovies,
     getTopMovies,
     getMoviesSevenStarOrAbove,
     getMovies2022,
-    getTvSeriesPopular
+    getTvSeriesPopular,
+    getMoviesDetailsById
 }
