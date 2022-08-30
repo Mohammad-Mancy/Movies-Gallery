@@ -1,8 +1,15 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import notFoundImage from './../assets/notfound.png'
+import { useNavigate } from 'react-router-dom'
 
 function TopMovieCard({title,overview,image,release_date,vote_average,original_language}) {
+
+  const navigation = useNavigate()
+  const navigate = () => {
+    navigation('/movies/movie-details-page')
+  }
+
   return (
     <Card style={{ width: '30rem', alignSelf:'flex-start'}}>
       {image?
@@ -22,7 +29,10 @@ function TopMovieCard({title,overview,image,release_date,vote_average,original_l
         </div>
 
         <Card.Text  style={{ height: '58%' , overflow: 'hidden' , color: 'grey'}}>{overview}</Card.Text>
-        <Button variant="primary">View Details</Button>
+        <Button 
+        variant="primary"
+        onClick={navigate}
+        >View Details</Button>
       </Card.Body>
     </Card>
   );
