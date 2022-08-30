@@ -5,11 +5,14 @@ import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import Badge from 'react-bootstrap/Badge';
 import Spinner from 'react-bootstrap/Spinner';
+import HorizontalScrolling from './scroll-bar/HorizontalScrolling';
+import { Footer } from '../Footer';
+
 
 
 function MovieDetailsPage() {
     const location = useLocation()
-    
+
     const [poster_path,setPoster_path] = useState()
     const [release_date,setRelease_date] = useState()
     const [overview,setOverview] = useState()
@@ -17,6 +20,24 @@ function MovieDetailsPage() {
     const [title,setTitle] = useState()
     const [vote_average,setVote_average] = useState()
     const [backdrop_path,setBackdrop_path] = useState()
+
+    // const [actors,setActors] = useState()
+    // MockServer
+const actors =[{
+    "adult":false,
+    "gender": 2,
+    "id": 7470,
+    "known_for_department": "Acting",
+    "name":"Meat Loaf",
+    "original_name": "Meat Loaf",
+    "popularity":2.67,
+    "profile_path": "/k9tJGdMkzOe17YH2ZCQjNnX5YLz.jpg",
+    "cast_id": 7,
+    "character": "Robert \"Bob\" Paulson",
+    "credit_id": "52fe4250c3a36847f80149ff",
+    "order": 3
+}]
+//   _____________________________________________
 
     let handleMoviesDetails = async () => {
         try {
@@ -41,9 +62,19 @@ function MovieDetailsPage() {
             console.log(error)
         }
     }
+
+    let handleActors = async () => {
+        try {
+            // Logic goes here
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     // fetch the data of movie on page load
     useEffect ( () => {
         handleMoviesDetails();
+        handleActors();
       });
     if(!poster_path||!vote_average||!backdrop_path) {
         return <Spinner animation="grow" />;
@@ -51,6 +82,7 @@ function MovieDetailsPage() {
   return (
     <div>
         <NavBar />
+
         <div className='background-image' style={{backgroundImage:`url("https://image.tmdb.org/t/p/w500/${backdrop_path}")`}}>
         <div className='background-image-inner'>
             <div className='inner-image'>
@@ -72,6 +104,14 @@ function MovieDetailsPage() {
             </div>
         </div>
         </div>
+
+        {/* scroll bar for movie actors */}
+        <div className='top-billed-cast-title'>
+            <h1>Top Billed Cast</h1>
+        </div>
+        <HorizontalScrolling actors={actors} />
+
+        <Footer />
     </div>
   )
 }

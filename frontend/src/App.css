@@ -134,7 +134,7 @@ a{
 
 .inner-image{
   display: flex;
-  position: fixed;
+  position: absolute;
   gap: 10vw;
 }
 
@@ -166,4 +166,28 @@ a{
   width: 402px;
   margin-left: 99px;
   border-top: none !important;
+}
+
+/* Scroll bar */
+.react-horizontal-scrolling-menu--wrapper{
+  margin: 4vh 4vw 0 4vw;
+}
+.top-billed-cast-title{
+  text-align: start;
+  margin: 40px 0px 0px 100px;
+}
+
+.scroll-bar{
+  display: flex;
+  gap: 30px;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.scroll-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.actor-photo{
+  width: 195px;
+  height: 215px;
 }
