@@ -28,8 +28,20 @@ async function release2022(movies) {
     return movies2022
 }
 
+async function TopBilledCast(actors) {
+    let i = 0
+    let TopBilledCast = []
+    for (const actor of actors) {
+        TopBilledCast.push(actor)
+        if (i === 14) break ;
+        i++
+    }
+    return TopBilledCast
+}
+
 module.exports = {
     topSix,
     aboveSeven,
-    release2022
+    release2022,
+    TopBilledCast
   }
