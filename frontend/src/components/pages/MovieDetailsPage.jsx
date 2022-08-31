@@ -22,6 +22,7 @@ function MovieDetailsPage() {
     const [title,setTitle] = useState()
     const [vote_average,setVote_average] = useState()
     const [backdrop_path,setBackdrop_path] = useState()
+    const [videoId,setVideoId] = useState()
 
     const [actors,setActors] = useState()
 
@@ -43,6 +44,7 @@ function MovieDetailsPage() {
                 setTitle(data.title)
                 setVote_average(data.vote_average)
                 setBackdrop_path(data.backdrop_path)
+                setVideoId(data.videos.results.key)
             }
         } catch (error) {
             console.log(error)
@@ -109,14 +111,16 @@ function MovieDetailsPage() {
 
         <hr className='movie-details-divider'/>
 
-        <div className='more-info-title'>
-            <h1>More Info</h1>
-        </div>
         <div className="section-two-movie-details">
-            
-            <MovieTrailer />
-            <MoreInfo />
-            
+
+            <div className='trailer'>
+                <h1>Trailer</h1>
+                <MovieTrailer videoId={videoId}/>
+            </div>
+            <div className='trailer'>
+                <h1>More Info</h1>
+                <MoreInfo />
+            </div>
         </div>
 
         <Footer />

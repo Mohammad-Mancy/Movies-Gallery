@@ -39,9 +39,19 @@ async function TopBilledCast(actors) {
     return TopBilledCast
 }
 
+async function getOficialTrailer(vedios) {
+    for (const vedio of vedios) {
+        if (vedio.type === 'Trailer' && vedio.official === true) {
+            return vedio
+        }
+    }
+    return vedios[0]
+}
+
 module.exports = {
     topSix,
     aboveSeven,
     release2022,
-    TopBilledCast
+    TopBilledCast,
+    getOficialTrailer
   }

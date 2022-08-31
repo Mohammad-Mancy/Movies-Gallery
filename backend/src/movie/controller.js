@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const { topSix, aboveSeven, release2022, TopBilledCast } = require('./service')
+const { topSix, aboveSeven, release2022, TopBilledCast, getOficialTrailer } = require('./service')
 
 async function getAllMovies(req, res) {
     try {
@@ -77,6 +77,7 @@ async function getMoviesDetailsById(req, res) {
       "https://api.themoviedb.org/3/movie/"+id+"?api_key="+process.env.API_KEY+"&append_to_response=videos"
     )
     const apiResponseJson = await apiResponse.json()
+    apiResponseJson.videos.results = await getOficialTrailer(apiResponseJson.videos.results)
     res.status(200).send(apiResponseJson)
 
   } catch (error) {
