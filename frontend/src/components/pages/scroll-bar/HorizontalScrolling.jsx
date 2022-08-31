@@ -2,12 +2,30 @@ import React from 'react';
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill } from 'react-icons/bs'
 import notfound from './../../../assets/user-avatar.png'
+import anonymousCompany from './../../../assets/anonymous-company.jpg'
 
-function HorizontalScrolling({actors}) {
+function HorizontalScrolling({items,company}) {
   return (
     <>
-    <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} scrollContainerClassName="scroll-bar">
-      {actors.map(({ id,profile_path,name }) => (
+    <ScrollMenu 
+    LeftArrow={LeftArrow} 
+    RightArrow={RightArrow} 
+    scrollContainerClassName="scroll-bar"
+    >
+      {company?
+      items.map(({ id,profile_path,name }) => (
+        <div key={id}>
+          {profile_path?
+          <img src={"https://image.tmdb.org/t/p/w500/"+profile_path} className="company-photo"/>
+          :
+          <img src={anonymousCompany} className="company-photo"/>
+          }
+
+        <div style={{textAlign:'center'}}>{name}</div>
+      </div>
+      ))
+      :
+      items.map(({ id,profile_path,name }) => (
         <div key={id}>
           {profile_path?
           <img src={"https://image.tmdb.org/t/p/w500/"+profile_path} className="actor-photo"/>
@@ -17,7 +35,8 @@ function HorizontalScrolling({actors}) {
 
         <div>{name}</div>
       </div>
-      ))}
+      ))
+      }
     </ScrollMenu>
     </>
 

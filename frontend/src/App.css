@@ -170,7 +170,7 @@ a{
 
 /* Scroll bar */
 .react-horizontal-scrolling-menu--wrapper{
-  margin: 4vh 4vw 0 4vw;
+  margin: 0vh 1vw 0 1vw;
 }
 .top-billed-cast-title,.trailer,.more-info{
   text-align: start;
@@ -222,4 +222,10 @@ a{
 }
 .trailer{
   align-self: start;
+}
+
+.company-photo{
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
 }

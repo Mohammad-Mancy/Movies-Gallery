@@ -105,9 +105,9 @@ function MovieDetailsPage() {
 
         {/* scroll bar for movie actors */}
         <div className='top-billed-cast-title'>
-            <h1>Top Billed Cast</h1>
+            <h1 style={{marginBottom:'3vh'}}>Top Billed Cast</h1>
         </div>
-        <HorizontalScrolling actors={actors} />
+        <HorizontalScrolling items={actors} />
 
         <hr className='movie-details-divider'/>
 
