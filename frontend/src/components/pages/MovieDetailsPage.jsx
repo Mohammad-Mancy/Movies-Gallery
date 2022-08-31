@@ -7,6 +7,8 @@ import Badge from 'react-bootstrap/Badge';
 import Spinner from 'react-bootstrap/Spinner';
 import HorizontalScrolling from './scroll-bar/HorizontalScrolling';
 import { Footer } from '../Footer';
+import MoreInfo from './movie-details-section-two/MoreInfo';
+import MovieTrailer from './movie-details-section-two/MovieTrailer';
 
 
 
@@ -104,6 +106,18 @@ function MovieDetailsPage() {
             <h1>Top Billed Cast</h1>
         </div>
         <HorizontalScrolling actors={actors} />
+
+        <hr className='movie-details-divider'/>
+
+        <div className='more-info-title'>
+            <h1>More Info</h1>
+        </div>
+        <div className="section-two-movie-details">
+            
+            <MovieTrailer />
+            <MoreInfo />
+            
+        </div>
 
         <Footer />
     </div>

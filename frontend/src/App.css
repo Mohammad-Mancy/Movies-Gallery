@@ -172,7 +172,7 @@ a{
 .react-horizontal-scrolling-menu--wrapper{
   margin: 4vh 4vw 0 4vw;
 }
-.top-billed-cast-title{
+.top-billed-cast-title,.more-info-title{
   text-align: start;
   margin: 40px 0px 0px 100px;
 }
@@ -205,3 +205,19 @@ a{
 .arrow-btn-scroll:hover{
   transform: scale(1.5);
 }
+/* divider */
+.movie-details-divider{
+  width: 80vw;
+  margin: auto;
+  margin-top: 40px;
+}
+
+/* Section two movie details */
+.section-two-movie-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 40px 20px 0px 20px;
+}
+
