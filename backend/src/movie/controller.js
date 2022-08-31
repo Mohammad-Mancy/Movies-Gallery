@@ -74,7 +74,7 @@ async function getMoviesDetailsById(req, res) {
   try {
     const id = req.body.id
     const apiResponse = await fetch(
-      "https://api.themoviedb.org/3/movie/"+id+"?api_key="+process.env.API_KEY
+      "https://api.themoviedb.org/3/movie/"+id+"?api_key="+process.env.API_KEY+"&append_to_response=videos"
     )
     const apiResponseJson = await apiResponse.json()
     res.status(200).send(apiResponseJson)
