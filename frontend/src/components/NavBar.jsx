@@ -41,7 +41,7 @@ function NavScroll() {
               <NavDropdown.Item href="#action3">
               <span >Account</span>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
+              <NavDropdown.Item href="/main/my-gallery">
               <span >My Gallery</span>
               </NavDropdown.Item>
               </>
