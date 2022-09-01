@@ -23,6 +23,11 @@ function MovieDetailsPage() {
     const [vote_average,setVote_average] = useState()
     const [backdrop_path,setBackdrop_path] = useState()
     const [videoId,setVideoId] = useState()
+    const [spoken_languages,setSpoken_languages] = useState()
+    const [tagline,setTagline] = useState()
+    const [runtime,setRuntime] = useState()
+    const [genres,setGenres] = useState([])
+    const [production_companies,setProduction_companies] = useState([])
 
     const [actors,setActors] = useState()
 
@@ -44,6 +49,11 @@ function MovieDetailsPage() {
                 setTitle(data.title)
                 setVote_average(data.vote_average)
                 setBackdrop_path(data.backdrop_path)
+                setSpoken_languages(data.spoken_languages)
+                setTagline(data.tagline)
+                setRuntime(data.runtime)
+                setGenres(data.genres)
+                setProduction_companies(data.production_companies)
                 setVideoId(data.videos.results.key)
             }
         } catch (error) {
@@ -119,7 +129,18 @@ function MovieDetailsPage() {
             </div>
             <div className='trailer'>
                 <h1>More Info</h1>
-                <MoreInfo />
+                    {!genres||!spoken_languages||!production_companies?
+                        <Spinner animation="grow" />
+                        :
+                        <MoreInfo 
+                        tagline={tagline}
+                        genres={genres}
+                        release_date={release_date}
+                        spoken_languages={spoken_languages}
+                        runtime={runtime}
+                        production_companies={production_companies}
+                        />
+                    }
             </div>
         </div>
 

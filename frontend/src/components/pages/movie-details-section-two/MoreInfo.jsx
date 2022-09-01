@@ -3,35 +3,32 @@ import {MdAvTimer, MdLanguage, MdOutlineDoubleArrow} from 'react-icons/md'
 import { BsCalendarDate } from 'react-icons/bs'
 import HorizontalScrolling from '../scroll-bar/HorizontalScrolling'
 
-function MoreInfo() {
-  // MockServer
-  const companies = [{
-    id:12312312,
-    name:'test',
-    profile_path:''
-  },{
-    id:2323,
-    name:'test22',
-    profile_path:''
-  },{
-    id:2312,
-    name:'test223',
-    profile_path:''
-  },{
-    id:12345434312312,
-    name:'test222323',
-    profile_path:''
-  }]
-  // ______________
+function MoreInfo({
+  tagline,
+  genres,
+  release_date,
+  spoken_languages,
+  runtime,
+  production_companies
+}) {
   return (
     <div style={{width:'700px'}}>
-      <h5>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur nostrum dolor iure."</h5>
-      <h5><MdOutlineDoubleArrow /> Genres : Actions | Drama | Thriller</h5>
-      <h5><BsCalendarDate /> Released Date : 2022-12-12</h5>
-      <h5><MdLanguage /> Spoken Langauge : English</h5>
-      <h5><MdAvTimer /> Runtime : 130 minute</h5>
-      <h5><MdOutlineDoubleArrow /> Productions Companies :</h5>
-      <HorizontalScrolling items={companies} company={true} />
+      <h5>"{tagline}"</h5>
+      <div className="genres-line">
+        <h5><MdOutlineDoubleArrow /> Genres : </h5>
+        {genres.map(genre => {
+          return <h5 key={genre.id} style={{color:'grey'}}>| {genre.name} |</h5>
+        })}
+      </div>
+      <h5><BsCalendarDate /> Released Date : {release_date}</h5>
+      <h5><MdLanguage /> Spoken Langauge : {spoken_languages?spoken_languages[0].english_name:"not found"}</h5>
+      <h5><MdAvTimer /> Runtime : {runtime?runtime:"..."} minute</h5>
+      <h5 style={{marginBottom:'5vh'}}><MdOutlineDoubleArrow /> Productions Companies :</h5>
+      {production_companies.length !== 0?
+      <HorizontalScrolling items={production_companies} company={true} />
+      :
+      <>Companies not found</>
+      }
     </div>
   )
 }

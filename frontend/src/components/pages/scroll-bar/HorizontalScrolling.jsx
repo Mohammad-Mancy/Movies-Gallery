@@ -13,10 +13,10 @@ function HorizontalScrolling({items,company}) {
     scrollContainerClassName="scroll-bar"
     >
       {company?
-      items.map(({ id,profile_path,name }) => (
+      items.map(({ id,logo_path,name }) => (
         <div key={id}>
-          {profile_path?
-          <img src={"https://image.tmdb.org/t/p/w500/"+profile_path} className="company-photo"/>
+          {logo_path?
+          <img src={"https://image.tmdb.org/t/p/w500/"+logo_path} className="company-photo"/>
           :
           <img src={anonymousCompany} className="company-photo"/>
           }
