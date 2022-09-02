@@ -18,32 +18,6 @@ const app = express()
 app.use(cors());
 app.use(express.json());
 
-// ########### API add user <TEST DB> ######
-const Movie = require('./model/Movie')
-app.use('/movie',async function add(req,res){
-    const {
-        title,
-        overview,
-        image,
-        vote_avg,
-        release_date,
-        original_lng
-      } = req.body;
-    const movie = new Movie({
-        title,
-        overview,
-        image,
-        vote_avg,
-        release_date,
-        original_lng
-      });
-    
-      await movie.save();
-      return res.send({ Status: "Success" });
-});
-
-// ##########################################
-
 app.use('/api/user', userRouter);
 app.use('/api', movieRouter);
 

@@ -36,6 +36,10 @@ const movieSchema = new mongoose.Schema({
         required: true,
         min:1,
         max:20
+    },
+    movieDBId:{
+      type: Number,
+      required: true
     }
   });
   

@@ -1,4 +1,5 @@
 const User = require('./../../model/User')
+const Movie = require('./../../model/Movie')
 
 async function addUser(body, hashPassword) {
     const {
@@ -18,7 +19,32 @@ async function getByEmail(email) {
       email
     });
 }
+
+async function addMovieFunction(body,ObjectId) {
+    const {
+      title,
+      overview,
+      image,
+      vote_avg,
+      release_date,
+      original_lng,
+      movieDBId
+    } = body
+  
+    const movie = new Movie({
+      title,
+      overview,
+      image,
+      vote_avg,
+      release_date,
+      original_lng,
+      movieDBId
+    })
+    return await movie.save();
+}
+
 module.exports = {
     addUser,
-    getByEmail
+    getByEmail,
+    addMovieFunction
   }

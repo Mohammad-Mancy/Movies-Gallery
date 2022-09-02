@@ -1,7 +1,8 @@
-const {addUser,getByEmail} = require('./service')
+const {addUser,getByEmail,addMovieFunction} = require('./service')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const TOKEN_SECRET = process.env.TOKEN_SECRET || "";
+const Movie = require('./../../model/Movie')
 
 async function register(req, res) {
     try {
@@ -38,7 +39,34 @@ async function login(req, res) {
         res.status(500).send(error);
     }
 }
+
+async function addMovie(req,res) {
+  try {
+    // Check the token if it's Valid
+    const token = await req.headers.authorization;
+    jwt.verify(token, TOKEN_SECRET, async (err, decoded) => {
+      if (err) {
+        return res.status(401).send(err);
+      }
+
+      // Add movie Document on Movie Collection
+      const movie = await Movie.findOne({'movieDBId' : req.body.movieDBId})
+      let addMovieResult
+      if (movie === null) { //if not exist <the movie> create it / else Continue
+        addMovieResult = await addMovieFunction(req.body);
+      }
+
+      // Add movie to user.movies Array
+      res.status(200).send(addMovieResult);
+    })
+  } catch ({movie}) {
+    console.error(error);
+    res.status(500).send(error);
+  }
+}
+
   module.exports = {
     register,
-    login
+    login,
+    addMovie
   }
