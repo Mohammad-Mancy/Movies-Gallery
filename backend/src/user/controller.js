@@ -43,7 +43,7 @@ async function login(req, res) {
 async function addMovie(req,res) {
   try {
     // Check the token if it's Valid
-    const token = await req.headers.authorization;
+    const token = await JSON.parse(req.headers['authorization']);
     jwt.verify(token, TOKEN_SECRET, async (err, decoded) => {
       if (err) {
         return res.status(401).send(err);

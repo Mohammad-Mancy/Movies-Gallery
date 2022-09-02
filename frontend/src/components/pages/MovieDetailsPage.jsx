@@ -9,10 +9,18 @@ import HorizontalScrolling from './scroll-bar/HorizontalScrolling';
 import { Footer } from '../Footer';
 import MoreInfo from './movie-details-section-two/MoreInfo';
 import MovieTrailer from './movie-details-section-two/MovieTrailer';
-
+import { useSelector } from 'react-redux';
+import jwt_decode from "jwt-decode";
 
 
 function MovieDetailsPage() {
+
+    const token = useSelector((state) => state.token.value)
+    var decoded = jwt_decode(token);
+    const userId = decoded._id
+
+    const accessToken = JSON.stringify(token)
+    
     const location = useLocation()
 
     const [poster_path,setPoster_path] = useState()
@@ -84,6 +92,33 @@ function MovieDetailsPage() {
         handleMoviesDetails();
         handleActors();
       });
+
+    let handleAddToGallery = async () => {
+        try {
+            let res = await fetch('http://localhost:3000/api/user/movie/add',{
+                method : 'POST',
+                headers : {
+                    'Content-Type' : 'application/json',
+                    'authorization' : accessToken
+                    },
+                body : JSON.stringify({
+                    userId:userId,
+                    title:title,
+                    overview:overview,
+                    image:poster_path,
+                    vote_avg:vote_average,
+                    release_date:release_date,
+                    original_lng:original_language,
+                    movieDBId:location.state.id,
+                })
+            })
+            const data = await res.json()
+            console.log(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    
     if(!poster_path||!vote_average||!backdrop_path||!actors) {
         return <Spinner animation="grow" />;
     }
@@ -106,7 +141,12 @@ function MovieDetailsPage() {
                     <h4 style={{color:'slategrey'}}>Overview</h4>
                     <h4>{overview}</h4>
                 </div>
-                <Button variant="outline-secondary" className='add-to-gallery-btn'>
+                {/* Add Movie To The Gallery */}
+                <Button 
+                variant="outline-secondary" 
+                className='add-to-gallery-btn'
+                onClick={handleAddToGallery}
+                >
                         Add To My Gallery
                 </Button>
             </div>
