@@ -1,5 +1,5 @@
 const User = require('./../../model/User')
-const Movie = require('./../../model/Movie')
+const Movie = require('./../../model/Movie');
 
 async function addUser(body, hashPassword) {
     const {
@@ -40,11 +40,36 @@ async function addMovieFunction(body,ObjectId) {
       original_lng,
       movieDBId
     })
-    return await movie.save();
+    return await (await movie.save()).id;
+}
+
+async function addMovieToUser(movieId,userId) {
+  const user = await User.findById(userId)
+  let updateUser
+  //if the movie not exist in the gallery of user then push movie Id to the array of movies
+  if (!user.movies.includes(movieId)) {
+    // using updateMany() 
+    // to find all movies in the list of movies to this user and update them to include this movieId
+    updateUser = await User.updateMany(
+      {
+        _id: userId
+      },
+      {
+        $push: {
+          movies: movieId
+        }
+      }
+    );
+  } else {
+    return false //return false if the user have aleardy the movie in his gallery
+  }
+
+    return true
 }
 
 module.exports = {
     addUser,
     getByEmail,
-    addMovieFunction
+    addMovieFunction,
+    addMovieToUser
   }

@@ -1,4 +1,4 @@
-const {addUser,getByEmail,addMovieFunction} = require('./service')
+const {addUser,getByEmail,addMovieFunction,addMovieToUser} = require('./service')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const TOKEN_SECRET = process.env.TOKEN_SECRET || "";
@@ -51,13 +51,17 @@ async function addMovie(req,res) {
 
       // Add movie Document on Movie Collection
       const movie = await Movie.findOne({'movieDBId' : req.body.movieDBId})
-      let addMovieResult
-      if (movie === null) { //if not exist <the movie> create it / else Continue
-        addMovieResult = await addMovieFunction(req.body);
+      let MovieId
+      if (movie === null) { //if not exist <the movie> create it 
+        MovieId = await addMovieFunction(req.body); // return the new genarated id
+      }else{
+        MovieId = movie._id;//Get the exist Id of an Exist Movie
       }
+      const userId = req.body.userId
 
       // Add movie to user.movies Array
-      res.status(200).send(addMovieResult);
+      const addMovie = await addMovieToUser(MovieId,userId)
+      res.status(200).send(addMovie);
     })
   } catch ({movie}) {
     console.error(error);
