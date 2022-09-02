@@ -1,4 +1,4 @@
-const {addUser,getByEmail,addMovieFunction,addMovieToUser} = require('./service')
+const {addUser,getByEmail,addMovieFunction,addMovieToUser,getMoviesByuser} = require('./service')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const TOKEN_SECRET = process.env.TOKEN_SECRET || "";
@@ -69,8 +69,27 @@ async function addMovie(req,res) {
   }
 }
 
+async function getMovies(req, res) {
+  try {
+  const token = await req.headers['authorization'];
+  jwt.verify(token, TOKEN_SECRET, async (err, decoded) => {
+    if (err) {
+      return res.status(401).send(err);
+    }
+      const result = await getMoviesByuser(req.body.id);
+      if(result.movies.length === 0){
+        res.status(404).send('No Movies');
+      }
+      res.status(200).send(result.movies);
+  })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
   module.exports = {
     register,
     login,
-    addMovie
+    addMovie,
+    getMovies
   }

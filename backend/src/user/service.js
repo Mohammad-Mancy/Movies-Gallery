@@ -66,10 +66,14 @@ async function addMovieToUser(movieId,userId) {
     return true
   }
 
+async function getMoviesByuser(id) {
+  return await User.findById(id).populate('movies');
+}
 
 module.exports = {
     addUser,
     getByEmail,
     addMovieFunction,
-    addMovieToUser
+    addMovieToUser,
+    getMoviesByuser
   }
