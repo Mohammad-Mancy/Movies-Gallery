@@ -247,3 +247,14 @@ a{
   justify-content: center;
   align-items: center;
 }
+
+.delete-button{
+  color: #ff5252;
+  font-size:x-large ;
+  cursor: pointer;
+}
+
+.delete-button:hover{
+  transform: scale(1.5);
+  color: #ff793f;
+}

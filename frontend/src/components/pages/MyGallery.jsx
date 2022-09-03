@@ -52,6 +52,14 @@ function MyGallery() {
               </>)
     }
 
+  const handleDeleteMovie = async (_id) => {
+    try {
+      // let res = await fetch('')
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <div>
         <NavBar />
@@ -66,7 +74,8 @@ function MyGallery() {
             image={image}
             release_date={release_date}
             vote_average={vote_avg.$numberDecimal}
-            original_language={original_lng}
+            gallery={true}
+            onDelete={handleDeleteMovie(_id)}
             />
         ))}
         </div>

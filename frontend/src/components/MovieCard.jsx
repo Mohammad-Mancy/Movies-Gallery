@@ -2,8 +2,9 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import notFoundImage from './../assets/notfound.png'
 import { useNavigate } from 'react-router-dom'
+import { RiDeleteBin5Fill } from 'react-icons/ri';
 
-function TopMovieCard({id,title,overview,image,release_date,vote_average,original_language}) {
+function TopMovieCard({id,title,overview,image,release_date,vote_average,original_language,gallery}) {
 
   const navigation = useNavigate()
   const navigate = () => {
@@ -24,7 +25,13 @@ function TopMovieCard({id,title,overview,image,release_date,vote_average,origina
 
     <Card.ImgOverlay style={{color:'#fff',fontWeight:'Bold'}}>
         <Card.Text>{release_date}</Card.Text>
-        <Card.Text>{original_language}</Card.Text>
+        {gallery?
+          <RiDeleteBin5Fill
+          className='delete-button'
+          />
+          :
+          <Card.Text>{original_language}</Card.Text>
+        }
     </Card.ImgOverlay>
       <Card.Body style={{height:'30vh'}}>
         <div className='movie-card-title'>
