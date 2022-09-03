@@ -1,8 +1,9 @@
-const {addUser,getByEmail,addMovieFunction,addMovieToUser,getMoviesByuser} = require('./service')
+const {addUser,getByEmail,addMovieFunction,addMovieToUser,getMoviesByuser,removeFromArray} = require('./service')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const TOKEN_SECRET = process.env.TOKEN_SECRET || "";
-const Movie = require('./../../model/Movie')
+const Movie = require('./../../model/Movie');
+const User = require('../../model/User');
 
 async function register(req, res) {
     try {
@@ -87,9 +88,26 @@ async function getMovies(req, res) {
   }
 }
 
+async function removeMovie(req, res) {
+  try {
+    const token = await req.headers['authorization'];
+    jwt.verify(token, TOKEN_SECRET, async (err, decoded) => {
+      if (err) {
+        return res.status(401).send(err);
+      }
+      const user = await User.findOne({ _id: req.body.id });
+      const result = await removeFromArray(user,req.body.movieId)
+      res.status(204).send();//not content to send just success status
+    })
+  } catch (error) {
+    console.error(error);
+  }
+}
+
   module.exports = {
     register,
     login,
     addMovie,
-    getMovies
+    getMovies,
+    removeMovie
   }

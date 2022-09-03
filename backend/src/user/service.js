@@ -70,10 +70,15 @@ async function getMoviesByuser(id) {
   return await User.findById(id).populate('movies');
 }
 
+async function removeFromArray(user,id) {
+  return await User.updateMany({ _id: user._id }, { $pull: { movies: id } });
+}
+
 module.exports = {
     addUser,
     getByEmail,
     addMovieFunction,
     addMovieToUser,
-    getMoviesByuser
+    getMoviesByuser,
+    removeFromArray
   }
