@@ -3,6 +3,8 @@ import Card from 'react-bootstrap/Card';
 import notFoundImage from './../assets/notfound.png'
 import { useNavigate } from 'react-router-dom'
 import { RiDeleteBin5Fill } from 'react-icons/ri';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 function TopMovieCard({id,title,overview,image,release_date,vote_average,original_language,gallery}) {
 
@@ -15,6 +17,13 @@ function TopMovieCard({id,title,overview,image,release_date,vote_average,origina
     })
   }
 
+  // on hover delete button
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      I didn't like it remove from gallery.
+    </Tooltip>
+  );
+
   return (
     <Card style={{ width: '30rem', alignSelf:'flex-start'}}>
       {image?
@@ -26,9 +35,21 @@ function TopMovieCard({id,title,overview,image,release_date,vote_average,origina
     <Card.ImgOverlay style={{color:'#fff',fontWeight:'Bold'}}>
         <Card.Text>{release_date}</Card.Text>
         {gallery?
-          <RiDeleteBin5Fill
-          className='delete-button'
-          />
+        <OverlayTrigger
+        placement="right"
+        delay={{ show: 250, hide: 400 }}
+        overlay={renderTooltip}
+        >
+        <Button
+        style={{
+          background: 'transparent',
+          border: 'none'
+        }}>        
+        <RiDeleteBin5Fill
+        className='delete-button'
+        /></Button>
+        </OverlayTrigger>
+
           :
           <Card.Text>{original_language}</Card.Text>
         }

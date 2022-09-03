@@ -249,12 +249,13 @@ a{
 }
 
 .delete-button{
-  color: #ff5252;
+  color: #fff;
   font-size:x-large ;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .delete-button:hover{
   transform: scale(1.5);
-  color: #ff793f;
+  color: #ff5252;
 }
