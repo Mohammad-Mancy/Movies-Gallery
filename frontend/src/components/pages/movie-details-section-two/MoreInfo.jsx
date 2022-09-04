@@ -17,7 +17,7 @@ function MoreInfo({
       <div className="genres-line">
         <h5><MdOutlineDoubleArrow /> Genres : </h5>
         {genres.map(genre => {
-          return <h5 key={genre.id} style={{color:'grey'}}>| {genre.name} |</h5>
+          return <h5 key={genre.id} style={{color:'#81ecec'}}>| {genre.name} |</h5>
         })}
       </div>
       <h5><BsCalendarDate /> Released Date : {release_date}</h5>

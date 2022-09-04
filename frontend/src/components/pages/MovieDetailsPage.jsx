@@ -132,7 +132,7 @@ function MovieDetailsPage() {
                 <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} className="poster-image"/>
                 <div className='movie-details'>
                     <div style={{display:'flex'}}>
-                        <h1>{title}</h1>
+                        <h2>{title}</h2>
                         <Badge pill bg="warning" text="dark" style={{height:'min-content'}}>
                             <strong>{vote_average.toFixed(1)}</strong>
                         </Badge>    
@@ -155,7 +155,7 @@ function MovieDetailsPage() {
 
         {/* scroll bar for movie actors */}
         <div className='top-billed-cast-title'>
-            <h1 style={{marginBottom:'3vh'}}>Top Billed Cast</h1>
+            <h2 style={{marginBottom:'3vh'}}>Top Billed Cast</h2>
         </div>
         <HorizontalScrolling items={actors} />
 
@@ -164,11 +164,11 @@ function MovieDetailsPage() {
         <div className="section-two-movie-details">
 
             <div className='trailer'>
-                <h1>Trailer</h1>
+                <h2>Trailer</h2>
                 <MovieTrailer videoId={videoId}/>
             </div>
             <div className='trailer'>
-                <h1>More Info</h1>
+                <h2>More Info</h2>
                     {!genres||!spoken_languages||!production_companies?
                         <Spinner animation="grow" />
                         :

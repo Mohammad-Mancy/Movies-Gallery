@@ -33,7 +33,14 @@ function HorizontalScrolling({items,company}) {
           <img src={notfound} className="actor-photo"/>
           }
 
-        <div>{name}</div>
+        <div>
+          <h5 style={{
+            color:'#81ecec',
+            marginTop:'15px'
+          }}>
+            {name}
+          </h5>
+        </div>
       </div>
       ))
       }

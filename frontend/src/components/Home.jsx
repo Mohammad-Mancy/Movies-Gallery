@@ -52,7 +52,7 @@ function Home() {
         />
     ))}
     </div>
-    <h1>Categories</h1>
+    <h2>Categories</h2>
     <div className='main-page-section-two'>
       <MovieTopRatedCollection />
       <Movies2022Card />

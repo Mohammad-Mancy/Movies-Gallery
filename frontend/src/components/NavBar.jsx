@@ -14,7 +14,7 @@ function NavScroll() {
   const token = useSelector((state) => state.token.value)
   const dispatch = useDispatch();
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar expand="lg">
       <Container fluid>
         <Navbar.Brand href="#">Movies Gallery</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />

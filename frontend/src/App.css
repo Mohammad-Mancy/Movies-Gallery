@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #f8f9fa;
+  background-color: #00cec9;
 }
 
 .App-logo {
@@ -16,11 +16,11 @@
 
 /* Backgroud Color for the App */
 :root{
-  background-color: #f8f9fa;
+  background-color: #00cec9;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #00cec9;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -71,10 +71,11 @@
 
 h1{
   font-family: 'Pattaya', sans-serif;
+  background: #81ecec;
+  color: #00cec9;
 }
 
 a{
-  color: #000 !important;
   text-decoration: none !important;
 }
 
@@ -258,4 +259,33 @@ a{
 .delete-button:hover{
   transform: scale(1.5);
   color: #ff5252;
+}
+
+/* Nav Bar */
+.navbar{
+  background-color: #81ecec !important;
+}
+.navbar-collapse{
+  background-color: rgb(0, 206, 201) !important;
+  border-radius: 44px;
+  font-size: large;
+  padding: 5px;
+}
+.d-flex{
+  margin-right: 30px !important;
+}
+.btn-outline-success{
+  border-radius: 20px !important;
+  background-color: #81ecec !important;
+  border: none !important;
+}
+.me-2{
+  border-radius: 20px !important; 
+}
+.navbar-brand{
+  color: rgb(0, 206, 201) !important;
+}
+
+h2{
+  color: #81ecec;
 }
