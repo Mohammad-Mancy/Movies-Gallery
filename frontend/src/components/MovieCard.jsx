@@ -6,7 +6,7 @@ import { RiDeleteBin5Fill } from 'react-icons/ri';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 
-function TopMovieCard({id,title,overview,image,release_date,vote_average,original_language,gallery}) {
+function TopMovieCard({id,title,overview,image,release_date,vote_average,original_language,gallery,onDelete}) {
 
   const navigation = useNavigate()
   const navigate = () => {
@@ -47,6 +47,7 @@ function TopMovieCard({id,title,overview,image,release_date,vote_average,origina
         }}>        
         <RiDeleteBin5Fill
         className='delete-button'
+        onClick={onDelete}
         /></Button>
         </OverlayTrigger>
 

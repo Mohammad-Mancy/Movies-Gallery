@@ -16,6 +16,8 @@ function MyGallery() {
 
   const [movies, setMovies] = React.useState([])
 
+  const [deleteNotification,setDeleteNotification] = React.useState(false)
+
   let handleMovies = async () => {
     try {
         let res = await fetch ("http://localhost:3000/api/user/movie/get",{
@@ -54,7 +56,20 @@ function MyGallery() {
 
   const handleDeleteMovie = async (_id) => {
     try {
-      // let res = await fetch('')
+      let res = await fetch('http://localhost:3000/api/user/movie/remove',{
+        method : 'DELETE',
+        headers : {
+          'Content-Type' : 'application/json',
+          'authorization' : accessToken
+        },
+        body : JSON.stringify({
+          id:userId,
+          movieId:_id
+        })
+      })
+      if (res.status === 204) {
+        setDeleteNotification(true)
+      }
     } catch (error) {
       console.error(error);
     }
@@ -64,8 +79,10 @@ function MyGallery() {
     <div>
         <NavBar />
         <h1>My Gallery</h1>
+        {deleteNotification &&
+        <div><h5 style={{color:'red'}}>Movie was removed</h5></div>}
         <div className="myGallery-container">
-        {movies.map(({_id,movieDBId,overview,image,release_date,title,vote_avg,original_lng}) => (
+        {movies.map(({_id,movieDBId,overview,image,release_date,title,vote_avg}) => (
             <MovieCard
             key={_id}
             id={movieDBId}
@@ -75,7 +92,13 @@ function MyGallery() {
             release_date={release_date}
             vote_average={vote_avg.$numberDecimal}
             gallery={true}
-            onDelete={handleDeleteMovie(_id)}
+            onDelete={ () => {
+              handleDeleteMovie(_id)
+              setTimeout(() => {
+                setDeleteNotification(false)
+                window.location.reload()
+              },2000)  
+            }}
             />
         ))}
         </div>
