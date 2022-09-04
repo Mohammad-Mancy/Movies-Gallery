@@ -1,6 +1,6 @@
 import React from 'react';
 import { CDBFooter, CDBBtn, CDBIcon, CDBBox } from 'cdbreact';
-import logo from './../assets/MovieIcon.png'
+import logo from './../assets/Untitled.png'
 
 export const Footer = () => {
 
@@ -29,26 +29,28 @@ export const Footer = () => {
             />
         </CDBBox>
         <CDBBox>
-          <small className="ml-2">&copy; Mohammad Mancy, 2022. All rights reserved.</small>
+          <h5 style={{
+            color:'#81ecec'
+          }} className="ml-2">&copy; Mohammad Mancy, 2022. All rights reserved.</h5>
         </CDBBox>
         <CDBBox display="flex">
-          <CDBBtn flat color="dark" className="p-2">
-          <a href='https://www.facebook.com/mohammad.mancy.33' style={{color:'#fff'}}>
+          <CDBBtn flat color="dark" className="p-2 background-color-transparent">
+          <a href='https://www.facebook.com/mohammad.mancy.33'>
                 <CDBIcon fab icon="facebook-f" />
             </a>
           </CDBBtn>
-          <CDBBtn flat color="dark" className="mx-3 p-2">
-            <a href='https://twitter.com/mancy_mohammad' style={{color:'#fff'}}>
+          <CDBBtn flat color="dark" className="mx-3 p-2 background-color-transparent">
+            <a href='https://twitter.com/mancy_mohammad'>
                 <CDBIcon fab icon="twitter" />
             </a>
           </CDBBtn>
-          <CDBBtn flat color="dark" className="p-2">
-            <a href='https://www.instagram.com/mohammad.mancy.33/' style={{color:'#fff'}}>
+          <CDBBtn flat color="dark" className="p-2 background-color-transparent">
+            <a href='https://www.instagram.com/mohammad.mancy.33/'>
                 <CDBIcon fab icon="instagram" />
             </a>
           </CDBBtn>
-          <CDBBtn flat color="dark" className="mx-3 p-2">
-            <a href='https://www.linkedin.com/in/mohammad-mancy-75b591227/' style={{color:'#fff'}}>
+          <CDBBtn flat color="dark" className="mx-3 p-2 background-color-transparent">
+            <a href='https://www.linkedin.com/in/mohammad-mancy-75b591227/'>
                 <CDBIcon fab icon="linkedin" />
             </a>
           </CDBBtn>

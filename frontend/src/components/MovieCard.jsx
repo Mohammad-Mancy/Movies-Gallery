@@ -25,7 +25,7 @@ function TopMovieCard({id,title,overview,image,release_date,vote_average,origina
   );
 
   return (
-    <Card style={{ width: '30rem', alignSelf:'flex-start'}}>
+    <Card style={{ width: '30rem', alignSelf:'flex-start', borderRadius:'80px'}}>
       {image?
       <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/${image}`}/>
       :
