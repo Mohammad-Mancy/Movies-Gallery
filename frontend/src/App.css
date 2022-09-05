@@ -311,3 +311,7 @@ h2{
 .text-muted-app{
   color: #81ecec !important;
 }
+
+.mg-bottom{
+  margin-bottom: 6vh;
+}
