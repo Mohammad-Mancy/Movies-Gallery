@@ -9,6 +9,7 @@ import Movies2022 from './components/pages/Movies2022';
 import TvSeries from './components/pages/TvSeries';
 import MovieDetailsPage from './components/pages/MovieDetailsPage';
 import MyGallery from './components/pages/MyGallery';
+import Account from './components/pages/Account';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/main/top-rated-popular-movies' element={<TopRatedPopularMovies />}/>
           <Route path='/main/movies-released-2022' element={<Movies2022 />}/>
           <Route path='/main/my-gallery' element={<MyGallery />}/>
+          <Route path='/main/account' element={<Account />}/>
           <Route path='/main/tv-series' element={<TvSeries />}/>
           <Route path='/movies/movie-details-page' element={<MovieDetailsPage />}/>
         </Routes>
