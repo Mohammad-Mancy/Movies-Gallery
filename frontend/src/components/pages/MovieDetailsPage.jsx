@@ -39,6 +39,9 @@ function MovieDetailsPage() {
 
     const [actors,setActors] = useState()
 
+    const [notificationAdded,setNotificationAdded] = React.useState(false)
+    const [notificationExist,setNotificationExist] = React.useState(false)  
+
     let handleMoviesDetails = async () => {
         try {
             let res = await fetch('http://localhost:3000/api/movie/details',{
@@ -113,7 +116,19 @@ function MovieDetailsPage() {
                 })
             })
             const data = await res.json()
-            console.log(data)
+            if (res.status === 200) {
+                if (data === true) {
+                  setNotificationAdded(true)
+                  setTimeout(() => {
+                    setNotificationAdded(false)
+                  },2000) 
+                }else{
+                  setNotificationExist(true)
+                  setTimeout(() => {
+                    setNotificationExist(false)
+                  },2000) 
+                }
+            }
         } catch (error) {
             console.log(error)
         }
@@ -142,6 +157,12 @@ function MovieDetailsPage() {
                     <h4>{overview}</h4>
                 </div>
                 {/* Add Movie To The Gallery */}
+                <div className="notification-msg">
+                {notificationAdded &&
+                <div><h5 style={{color:'Green'}}>Movie was Added</h5></div>}
+                {notificationExist &&
+                <div><h5 style={{color:'red'}}>Movie Already Exist</h5></div>}
+                </div>
                 <Button 
                 variant="outline-secondary" 
                 className='add-to-gallery-btn'

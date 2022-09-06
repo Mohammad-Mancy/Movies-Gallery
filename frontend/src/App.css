@@ -168,6 +168,20 @@ a{
   margin-left: 99px;
   border-top: none !important;
 }
+.notification-msg{
+  height: 4.4rem;
+  border-radius: 0 0 15px 15px !important;
+  position: absolute;
+  bottom: calc(143% - 28.3rem);
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 402px;
+  margin-left: 99px;
+  border-top: none !important;
+}
 
 /* Scroll bar */
 .react-horizontal-scrolling-menu--wrapper{

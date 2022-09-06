@@ -64,7 +64,7 @@ async function addMovie(req,res) {
       const addMovie = await addMovieToUser(MovieId,userId)
       res.status(200).send(addMovie);
     })
-  } catch ({movie}) {
+  } catch (error) {
     console.error(error);
     res.status(500).send(error);
   }
