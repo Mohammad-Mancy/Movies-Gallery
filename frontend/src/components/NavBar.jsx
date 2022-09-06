@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { clearToken } from './../features/user';
 import { reactLocalStorage } from 'reactjs-localstorage';
+import SearchMovie from './modal/SearchMovie';
 
 function NavScroll() {
   const token = useSelector((state) => state.token.value)
@@ -63,15 +64,7 @@ function NavScroll() {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
+          <SearchMovie/>
         </Navbar.Collapse>
       </Container>
     </Navbar>
