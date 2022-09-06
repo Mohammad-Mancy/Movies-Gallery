@@ -106,7 +106,7 @@ async function removeMovie(req, res) {
 
 async function editProfile(req,res) {
   try {
-    const token = await req.headers['authorization'];
+    const token = await JSON.parse(req.headers['authorization']);
     jwt.verify(token, TOKEN_SECRET, async (err) => {
       //check if token valid
       if (err) {
@@ -118,7 +118,7 @@ async function editProfile(req,res) {
       if (!user) return res.status(400).send('invalid credentials');
   
       const validPassword = await bcrypt.compare(req.body.password, user.password);
-      if (!validPassword) return res.status(401).send('invalid credentials'); // 401 Unauthorized
+      if (!validPassword) return res.status(401).send(false); // 401 Unauthorized/ send false password not matched
   
       // hashing the password
       const salt = await bcrypt.genSalt(10);
@@ -137,11 +137,16 @@ async function editProfile(req,res) {
         password: hashPassword
       },{ upsert: true, new: true })//only mentioned attributes
   
+      const newToken = jwt.sign(
+        {_id: user._id, name: user.name, email: user.email},
+        TOKEN_SECRET
+        );
+
       // updating user with new one
       User.updateOne({_id: req.body.id}, updatedUser).then(
         () => {
           res.status(201).json({
-            message: 'User updated successfully!'
+            newToken: newToken
           });
         }
       ).catch(
