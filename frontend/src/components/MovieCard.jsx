@@ -63,7 +63,8 @@ function TopMovieCard({id,title,overview,image,release_date,vote_average,origina
 
         <Card.Text  style={{ height: '58%' , overflow: 'hidden' , color: 'grey'}}>{overview}</Card.Text>
         <Button 
-        variant="primary"
+        variant="info"
+        style={{color:'#fff'}}
         onClick={navigate}
         >View Details</Button>
       </Card.Body>

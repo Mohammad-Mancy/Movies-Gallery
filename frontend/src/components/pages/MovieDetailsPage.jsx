@@ -109,7 +109,7 @@ function MovieDetailsPage() {
                     title:title,
                     overview:overview,
                     image:poster_path,
-                    vote_avg:vote_average,
+                    vote_avg:vote_average.toFixed(1),
                     release_date:release_date,
                     original_lng:original_language,
                     movieDBId:location.state.id,
