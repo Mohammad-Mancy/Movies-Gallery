@@ -8,6 +8,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import jwt_decode from "jwt-decode";
 import {reactLocalStorage} from'reactjs-localstorage';
 import { setToken } from './../../features/user'
+import { useNavigate } from "react-router-dom";
 
 function Account() {
 
@@ -26,6 +27,9 @@ function Account() {
 
     const [validated, setValidated] = React.useState(false);
     const [passNotification, setPassNotification] = React.useState(false);
+    const [doneNotification, setDoneNotification] = React.useState(false);
+
+    const navigation = useNavigate()
 
     let handleSaveChanges = async (e) => {
         e.preventDefault()
@@ -54,18 +58,23 @@ function Account() {
             setPassNotification(false)
             dispatch(setToken(data.newToken))
             reactLocalStorage.set('token',data.newToken)
-            handleClose()
+            setDoneNotification(true)
+            setTimeout(() => {
+                handleClose()
+            }, 2000)
+            
         }else if (res.status === 401 && data === false) {
             setPassNotification(true)
         }}
 
     let handleClose = () => {
-        console.log('close function')
-    }
+            navigation('/')
+        }
   return (
     <div>
         <NavBar />
         <h1>My Account</h1>
+        {doneNotification && <h6>User Updated Succesfully</h6>}
         {/* Form */}
         <Form className='mg-bottom' onSubmit={handleSaveChanges}>
 
@@ -128,7 +137,7 @@ function Account() {
 
             <Stack gap={2} className="col-md-3 mx-auto">
                 <Button variant="success" type="submit">Save changes</Button>
-                <Button variant="outline-danger">Cancel</Button>
+                <Button variant="outline-danger" onClick={handleClose}>Cancel</Button>
             </Stack>
         </Form>
 
