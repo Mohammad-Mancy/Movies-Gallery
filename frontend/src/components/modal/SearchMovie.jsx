@@ -14,6 +14,9 @@ function SearchMovie() {
   const handleShow = () => setShow(true);
 
   let handleSearching = async (e) => {
+    if (searchMovie === undefined || searchMovie === '') {
+      return
+    }
     try {
         handleShow()
         let res = await fetch(`http://localhost:3000/api/movies/search?searchMovie=${searchMovie}`,{
@@ -28,7 +31,6 @@ function SearchMovie() {
       console.log(error)
     }
   }
-
   return (
     <>          
     <Form className="d-flex">
@@ -49,8 +51,13 @@ function SearchMovie() {
           <Modal.Title>Showing result for {!searchMovie ? 'nothing' : <span style={{color:'#00cec9'}}>{searchMovie}</span>}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            {movies?
-            <span>test</span>
+            {movies.length !== 0?
+            <div className="movies-search-container">
+              {movies.map(({title}) => (
+                <>{title}<br/></>
+              )
+              )}
+            </div>
             :
             <span>Your search - failed to "{searchMovie} " - did not match any documents.</span>}
         </Modal.Body>
