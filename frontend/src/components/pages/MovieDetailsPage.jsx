@@ -15,11 +15,16 @@ import jwt_decode from "jwt-decode";
 
 function MovieDetailsPage() {
 
-    const token = useSelector((state) => state.token.value)
-    var decoded = jwt_decode(token);
-    const userId = decoded._id
+    const token = useSelector((state) => state.token.value) 
+    if (token !== '') {
+        var decoded = jwt_decode(token)
+    }else{
+        decoded = {id:null}
+    }
 
-    const accessToken = JSON.stringify(token)
+    const userId = decoded._id 
+
+    const accessToken = JSON.stringify(token) 
     
     const location = useLocation()
 

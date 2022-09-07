@@ -329,3 +329,7 @@ h2{
 .mg-bottom{
   margin-bottom: 6vh;
 }
+
+.modal-dialog-app>.modal-dialog{ /* to spacify only search movie Modal */
+ max-width: 50vw !important;
+}

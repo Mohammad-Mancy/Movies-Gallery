@@ -2,15 +2,19 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import SearchMovieCard from './../SearchMovieCard'
 
 function SearchMovie() {
 
   const [searchMovie, setSearchMovie] = useState();
-  const [movies,setMovies] = useState()
+  const [movies,setMovies] = useState([])
 
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false)
+    setMovies([])
+  };
   const handleShow = () => setShow(true);
 
   let handleSearching = async (e) => {
@@ -46,15 +50,23 @@ function SearchMovie() {
         onClick={handleSearching}
         >Search</Button>
     </Form>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className='modal-dialog-app'>
         <Modal.Header closeButton>
           <Modal.Title>Showing result for {!searchMovie ? 'nothing' : <span style={{color:'#00cec9'}}>{searchMovie}</span>}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
             {movies.length !== 0?
             <div className="movies-search-container">
-              {movies.map(({title}) => (
-                <>{title}<br/></>
+              {movies.map(({id,title,overview,poster_path,release_date,vote_average}) => (
+                <SearchMovieCard
+                key={id}
+                id={id}
+                title={title}
+                overview={overview}
+                image={poster_path}
+                release_date={release_date}
+                vote_average={vote_average}
+                />
               )
               )}
             </div>
