@@ -27,9 +27,11 @@ function Movies2022() {
         handleMovies2022();
       },[]);
 
-    if (!movies) {
+    if (movies.length === 0) {
     return(
+        <div className="spinner-div">
         <Spinner animation="grow" />
+        </div>
     )}
 
   return (

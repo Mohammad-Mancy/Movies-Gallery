@@ -31,7 +31,9 @@ function Home() {
   
     if (movies.length === 0) {
         return(
-          <Spinner animation="grow" />
+          <div className="spinner-div">
+            <Spinner animation="grow" />
+          </div>
       )}
 
   return (

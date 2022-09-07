@@ -27,9 +27,11 @@ function TvSeries() {
         handleTvSeries();
       },[]);
 
-    if (!tvSeries) {
+    if (tvSeries.length === 0) {
     return(
+        <div className="spinner-div">
         <Spinner animation="grow" />
+        </div>
     )}
 
   return (

@@ -27,9 +27,11 @@ function PopularMovies() {
         handlePopularMovies();
       },[]);
 
-    if (!movies) {
+    if (movies.length === 0) {
     return(
+        <div className="spinner-div">
         <Spinner animation="grow" />
+        </div>
     )}
 
   return (

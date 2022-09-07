@@ -385,3 +385,7 @@ h2{
 .bg-color{
   background-color: #faed26;
 }
+
+.spinner-div{
+  margin-top: 48vh;
+}
