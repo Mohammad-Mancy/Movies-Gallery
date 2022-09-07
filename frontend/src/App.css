@@ -345,11 +345,11 @@ h2{
 }
 
 .text-muted-app{
-  color: #81ecec !important;
+  color: #9d8d8f !important;
 }
 
 .mg-bottom{
-  margin-bottom: 6vh;
+  margin-bottom: 3vh;
 }
 
 .modal-dialog-app>.modal-dialog{ /* to spacify only search movie Modal */
@@ -388,4 +388,26 @@ h2{
 
 .spinner-div{
   margin-top: 48vh;
+}
+
+.btn-success{
+  --bs-btn-color: #46344e !important;
+  --bs-btn-bg: #faed26 !important;
+  --bs-btn-border-color: #46344e !important;
+  --bs-btn-hover-color: #faed26 !important;
+  --bs-btn-hover-bg: #46344e !important;
+  --bs-btn-hover-border-color: #faed26 !important;
+  --bs-btn-focus-shadow-rgb: 60,153,110;
+  --bs-btn-active-color: #46344e !important;
+  --bs-btn-active-bg: #faed26 !important;
+  --bs-btn-active-border-color: #faed26 !important;
+}
+.btn-outline-danger{
+  --bs-btn-color: #faed26 !important;
+  --bs-btn-border-color: #faed26 !important;
+  --bs-btn-hover-color: #fff;
+}
+
+.font-size-rem{
+  font-size: 1.2rem !important;
 }

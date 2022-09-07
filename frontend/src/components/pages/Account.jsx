@@ -78,18 +78,20 @@ function Account() {
         {/* Form */}
         <Form className='mg-bottom' onSubmit={handleSaveChanges}>
 
-            <Form.Group  className="col-md-3 mx-auto label-input" controlId="formBasicName">
+            <Form.Group  className="col-md-3 mx-auto label-input font-size-rem" controlId="formBasicName">
                 <Form.Label >Name</Form.Label>
                 <Form.Control 
+                className='font-size-rem'
                 type="text" 
                 placeholder="username" 
                 onChange={ (e) => setName(e.target.value)}
                 />
             </Form.Group>
 
-            <Form.Group className="col-md-3 mx-auto label-input" controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control 
+            <Form.Group className="col-md-3 mx-auto label-input font-size-rem" controlId="formBasicEmail">
+                <Form.Label >Email address</Form.Label>
+                <Form.Control
+                className='font-size-rem' 
                 type="email" 
                 placeholder={decoded.email}
                 disabled
@@ -99,9 +101,10 @@ function Account() {
                 </Form.Text>
             </Form.Group>
 
-            <Form.Group  className="col-md-3 mx-auto label-input" controlId="formBasicPassword">
+            <Form.Group  className="col-md-3 mx-auto label-input font-size-rem" controlId="formBasicPassword">
                 <Form.Label>Your Password <span style={{color:'red'}}>*</span></Form.Label>
                 <Form.Control 
+                className='font-size-rem'
                 type="password" 
                 placeholder="Enter your password" 
                 onChange={ (e) => setPassword(e.target.value)}
@@ -112,18 +115,20 @@ function Account() {
                 }
             </Form.Group>
 
-            <Form.Group  className="col-md-3 mx-auto label-input" controlId="formNewPassword">
+            <Form.Group  className="col-md-3 mx-auto label-input font-size-rem" controlId="formNewPassword">
                 <Form.Label>New Password</Form.Label>
                 <Form.Control 
+                className='font-size-rem'
                 type="password" 
                 placeholder="Enter your new password"
                 onChange={ (e) => setNewPassword(e.target.value)}
                 />
             </Form.Group>
 
-            <Form.Group  className="col-md-3 mx-auto label-input" controlId="formonfirmPassword">
+            <Form.Group  className="col-md-3 mx-auto label-input font-size-rem" controlId="formonfirmPassword">
                 <Form.Label>Confirm Password</Form.Label>
                 <Form.Control 
+                className='font-size-rem'
                 type="password" 
                 placeholder="Enter your confirmation password" 
                 onChange={ (e) => setConfirmPassword(e.target.value)}
@@ -136,8 +141,8 @@ function Account() {
             <hr className="col-md-3 mx-auto"></hr>
 
             <Stack gap={2} className="col-md-3 mx-auto">
-                <Button variant="success" type="submit">Save changes</Button>
-                <Button variant="outline-danger" onClick={handleClose}>Cancel</Button>
+                <Button variant="success" type="submit" className="font-size-rem">Save changes</Button>
+                <Button variant="outline-danger" className="font-size-rem" onClick={handleClose}>Cancel</Button>
             </Stack>
         </Form>
 
