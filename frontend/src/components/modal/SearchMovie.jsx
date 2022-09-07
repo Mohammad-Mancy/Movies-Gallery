@@ -16,7 +16,7 @@ function SearchMovie() {
   let handleSearching = async (e) => {
     try {
         handleShow()
-        let res = await fetch(`"http://localhost:3000/api/movies/search"${searchMovie}`,{
+        let res = await fetch(`http://localhost:3000/api/movies/search?searchMovie=${searchMovie}`,{
             method:'GET',
             headers:{'Content-Type' : 'application/json'}
         })

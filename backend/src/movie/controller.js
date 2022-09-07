@@ -100,6 +100,19 @@ async function getMovieActors(req, res) {
   }
 }
 
+async function getSearchedMovies(req,res) {
+  try {
+    const searchKey = await req.query.searchMovie
+    const apiResponse = await fetch(
+      "https://api.themoviedb.org/3/search/movie"+"?api_key="+process.env.API_KEY+"&query="+searchKey
+    )
+    const apiResponseJson = await apiResponse.json()
+    res.status(200).send({'response':apiResponseJson.results})
+
+  } catch (error) {
+    console.error(error);
+  }
+}
 module.exports = {
     getAllMovies,
     getTopMovies,
@@ -107,5 +120,6 @@ module.exports = {
     getMovies2022,
     getTvSeriesPopular,
     getMoviesDetailsById,
-    getMovieActors
+    getMovieActors,
+    getSearchedMovies
 }
