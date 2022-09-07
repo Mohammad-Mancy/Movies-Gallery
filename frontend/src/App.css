@@ -112,10 +112,11 @@ a{
 .signup-link{
   margin-right: auto !important;
   cursor: pointer;
+  color: #faed26;
 }
 
 .signup-link:hover{
-  color: #0D6EFD !important;
+  color: #9d8d8f !important;
 }
 
 .background-image{
@@ -410,4 +411,38 @@ h2{
 
 .font-size-rem{
   font-size: 1.2rem !important;
+}
+.dropdown-menu{
+  background-color: #46344e !important;
+}
+
+.yellow-color-font{
+  color: #faed26 !important;
+}
+.dropdown-item:hover{
+  background-color: #5a5560 !important;
+}
+.modal-content{
+  background-color: #46344e !important;
+}
+.modal-header,.modal-body{
+  color: #faed26 !important;
+}
+.btn-login,.btn-signup{
+  color: #46344e !important;
+  background-color: #faed26 !important;
+  border: none !important;
+}
+.btn-login:hover,.btn-signup:hover{
+  color: #faed26 !important;
+  background-color: #46344e !important;
+}
+.btn-close-form{
+  color: #46344e !important;
+  background-color: #9d8d8f !important;
+  border: none !important;
+}
+.btn-close-form:hover{
+  color: #faed26 !important;
+  background-color: #46344e !important;
 }

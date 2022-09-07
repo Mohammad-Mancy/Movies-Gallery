@@ -28,10 +28,9 @@ function SearchMovieCard({id,title,overview,image,release_date,vote_average}) {
         <Card.Title>{title}</Card.Title>
         <Card.Text><strong>{vote_average}</strong></Card.Text>
         </div>
-        <Card.Text  style={{ height:'5vh', overflow: 'hidden' , color: 'grey'}}>{overview}</Card.Text>
+        <Card.Text  style={{ height:'5vh', overflow: 'hidden'}}>{overview}</Card.Text>
         <Button 
         variant="info"
-        style={{color:'#fff'}}
         onClick={navigate}
         >View Details</Button>
       </Card.Body>

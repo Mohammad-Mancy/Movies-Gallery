@@ -44,10 +44,10 @@ function NavScroll() {
               :
               <>
               <NavDropdown.Item href="/main/account">
-              <span >Account</span>
+              <span className='yellow-color-font' >Account</span>
               </NavDropdown.Item>
               <NavDropdown.Item href="/main/my-gallery">
-              <span >My Gallery</span>
+              <span className='yellow-color-font'>My Gallery</span>
               </NavDropdown.Item>
               </>
               }
@@ -60,6 +60,7 @@ function NavScroll() {
                 :
                 <h6 
                 style={{textAlign:'center'}}
+                className='yellow-color-font'
                 onClick={() =>{
                   dispatch(clearToken())
                   reactLocalStorage.set('token',"")

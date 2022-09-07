@@ -148,7 +148,9 @@ function MovieDetailsPage() {
     }
     
     if(!poster_path||!vote_average||!backdrop_path||!actors) {
-        return <Spinner animation="grow" />;
+        <div className="spinner-div">
+        <Spinner animation="grow" />
+        </div>
     }
   return (
     <div>

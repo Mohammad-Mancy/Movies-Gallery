@@ -52,7 +52,7 @@ function SearchMovie() {
     </Form>
       <Modal show={show} onHide={handleClose} className='modal-dialog-app'>
         <Modal.Header closeButton>
-          <Modal.Title>Showing result for {!searchMovie ? 'nothing' : <span style={{color:'#00cec9'}}>{searchMovie}</span>}</Modal.Title>
+          <Modal.Title>Showing result for {!searchMovie ? 'nothing' : <span style={{color:'#9d8d8f'}}>{searchMovie}</span>}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
             {movies.length !== 0?

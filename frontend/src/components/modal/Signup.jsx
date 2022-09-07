@@ -79,10 +79,10 @@ function Signup() {
             <div><h6 style={{color:'green',textAlign:'center'}}>Account created successfully</h6></div>}
         <Modal.Footer>
           <h6 className='signup-link' onClick={handleClose}>Already Have An Account</h6>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleClose} className="btn-close-form">
             Close
           </Button>
-          <Button variant="primary" onClick={handleSubmit}>
+          <Button variant="primary" onClick={handleSubmit} className="btn-signup">
             Signup
           </Button>
         </Modal.Footer>

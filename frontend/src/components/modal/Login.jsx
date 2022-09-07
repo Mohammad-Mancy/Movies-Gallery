@@ -42,7 +42,7 @@ function Login() {
 
   return (
     <>
-      <Button variant="link" onClick={handleShow} className='login-btn'>
+      <Button variant="link" onClick={handleShow} className='login-btn yellow-color-font'>
         Login
       </Button>
       <Modal show={show} onHide={handleClose}>
@@ -70,10 +70,10 @@ function Login() {
         </Modal.Body>
         <Modal.Footer>
             <Signup />
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleClose} className="btn-close-form">
             Close
           </Button>
-          <Button variant="primary" onClick={handleSubmit}>
+          <Button variant="primary" onClick={handleSubmit} className="btn-login">
             Login
           </Button>
         </Modal.Footer>
