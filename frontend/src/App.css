@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #00cec9;
+  background-color: #5a5560;
 }
 
 .App-logo {
@@ -14,9 +14,11 @@
   }
 }
 
-/* Backgroud Color for the App */
+/* Root for the App */
 :root{
-  background-color: #00cec9;
+  background-color: #5a5560;
+  --bs-link-color:rgb(70, 52, 78) !important;
+  --bs-link-hover-color:#5a5560 !important;
 }
 
 .App-header {
@@ -55,7 +57,7 @@
 .movie-card-title{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: unset;
 }
 
 .card-img-overlay{
@@ -68,11 +70,15 @@
 .card-top-rated{
   cursor: pointer;
 }
+.card{
+  --bs-card-bg:#9d8d8f !important;
+  color: #fff;
+}
 
 h1{
   font-family: 'Pattaya', sans-serif;
-  background: #81ecec;
-  color: #00cec9;
+  background-color: #faed26;
+  color: #46344e;
 }
 
 a{
@@ -168,6 +174,18 @@ a{
   margin-left: 99px;
   border-top: none !important;
 }
+.add-to-gallery-btn:hover{
+  background-color: #faed26 !important;
+  color: #46344e !important;
+}
+.add-to-gallery-btn:active{
+  background-color: #46344e !important;
+  color: #faed26 !important;
+}
+.add-to-gallery-btn:focus{
+  background-color: #46344e !important;
+  color: #faed26 !important;
+}
 .notification-msg{
   height: 4.4rem;
   border-radius: 0 0 15px 15px !important;
@@ -215,9 +233,12 @@ a{
   cursor: pointer;
   margin-left: 20px;
   margin-right: 20px;
+  color: #46344e;
+  transition: 0.3s;
 }
 
 .arrow-btn-scroll:hover{
+  transition: 0.3s;
   transform: scale(1.5);
 }
 /* divider */
@@ -278,41 +299,37 @@ a{
 
 /* Nav Bar */
 .navbar{
-  background-color: #81ecec !important;
+  background-color: #faed26 !important;
 }
 .navbar-collapse{
-  background-color: rgb(0, 206, 201) !important;
+  background-color:#46344e !important;
   border-radius: 44px;
   font-size: large;
   padding: 5px;
 }
+.navbar{
+  --bs-navbar-color: #faed26 !important;
+  --bs-navbar-hover-color : #fff !important;
+  --bs-navbar-active-color: #fff !important;
+}
 .d-flex{
   margin-right: 30px !important;
-}
-.btn-outline-success{
-  border-radius: 20px !important;
-  background-color: #81ecec !important;
-  border: none !important;
 }
 .me-2{
   border-radius: 20px !important; 
 }
 .navbar-brand{
-  color: rgb(0, 206, 201) !important;
+  color: #46344e !important;
 }
 
 h2{
-  color: #81ecec;
+  color: #faed26;
 }
 
 .background-color-transparent{
   background-color:transparent !important
 }
 
-/* Movies details page */
-.btn-outline-secondary{
-  --bs-btn-hover-bg: #00cec9 !important
-}
 
 /* Form Account */
 
@@ -332,4 +349,34 @@ h2{
 
 .modal-dialog-app>.modal-dialog{ /* to spacify only search movie Modal */
  max-width: 50vw !important;
+}
+
+/* search btn */
+.btn-outline-success{
+  --bs-btn-bg:#faed26 !important;
+  border-radius: 20px !important;
+  border: none !important;
+  --bs-btn-color: #46344e !important;
+  --bs-btn-hover-bg: #46344e !important;
+  --bs-btn-active-bg: #46344e !important;
+}
+.btn-info{
+  --bs-btn-color: #fff !important;
+  --bs-btn-bg:#46344e !important;
+  --bs-btn-border-color: #46344e !important;
+  --bs-btn-hover-bg: #faed26 !important;
+  --bs-btn-hover-border-color: #faed26 !important;
+  --bs-btn-active-bg: #faed26 !important;
+  --bs-btn-active-border-color: #faed26 !important;
+  --bs-btn-hover-color: #46344e !important;
+}
+.main-page-section-two{
+  margin-bottom: 0 !important;
+}
+.category-container{
+  background-image: linear-gradient(#5a5560,#faed26);
+  padding-bottom: 50px;
+}
+.bg-color{
+  background-color: #faed26;
 }

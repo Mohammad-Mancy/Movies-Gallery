@@ -25,7 +25,7 @@ function TopMovieCard({id,title,overview,image,release_date,vote_average,origina
   );
 
   return (
-    <Card style={{ width: '30rem', alignSelf:'flex-start', borderRadius:'80px'}}>
+    <Card style={{ width: '30rem', alignSelf:'flex-start'}}>
       {image?
       <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/${image}`}/>
       :
@@ -61,10 +61,9 @@ function TopMovieCard({id,title,overview,image,release_date,vote_average,origina
         <Card.Text><strong>{vote_average}</strong></Card.Text>
         </div>
 
-        <Card.Text  style={{ height: '58%' , overflow: 'hidden' , color: 'grey'}}>{overview}</Card.Text>
+        <Card.Text  style={{ height: '58%' , overflow: 'hidden' , color: '#fff'}}>{overview}</Card.Text>
         <Button 
         variant="info"
-        style={{color:'#fff'}}
         onClick={navigate}
         >View Details</Button>
       </Card.Body>

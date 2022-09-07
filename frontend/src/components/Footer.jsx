@@ -11,7 +11,7 @@ export const Footer = () => {
         });
     };
   return (
-    <CDBFooter className="shadow">
+    <CDBFooter className="shadow bg-color">
       <CDBBox
         display="flex"
         justifyContent="between"
@@ -30,7 +30,7 @@ export const Footer = () => {
         </CDBBox>
         <CDBBox>
           <h5 style={{
-            color:'#81ecec'
+            color:'#46344e '
           }} className="ml-2">&copy; Mohammad Mancy, 2022. All rights reserved.</h5>
         </CDBBox>
         <CDBBox display="flex">

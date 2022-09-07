@@ -35,7 +35,7 @@ function HorizontalScrolling({items,company}) {
 
         <div>
           <h5 style={{
-            color:'#81ecec',
+            color:'#fff',
             marginTop:'15px'
           }}>
             {name}
