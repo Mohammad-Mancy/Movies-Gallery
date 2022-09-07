@@ -19,7 +19,7 @@ function MovieDetailsPage() {
     if (token !== '') {
         var decoded = jwt_decode(token)
     }else{
-        decoded = {id:null}
+        decoded = {_id:null}
     }
 
     const userId = decoded._id 
@@ -46,6 +46,7 @@ function MovieDetailsPage() {
 
     const [notificationAdded,setNotificationAdded] = React.useState(false)
     const [notificationExist,setNotificationExist] = React.useState(false)  
+    const [loginNotification,setLoginNotification] = React.useState(false)  
 
     let handleMoviesDetails = async () => {
         try {
@@ -102,6 +103,13 @@ function MovieDetailsPage() {
       });
 
     let handleAddToGallery = async () => {
+        if (userId === null) {
+            setLoginNotification(true)
+            {setTimeout(() => {
+                setLoginNotification(false)
+            }, 2000)}
+            return
+        }
         try {
             let res = await fetch('http://localhost:3000/api/user/movie/add',{
                 method : 'POST',
@@ -167,6 +175,8 @@ function MovieDetailsPage() {
                 <div><h5 style={{color:'Green'}}>Movie was Added</h5></div>}
                 {notificationExist &&
                 <div><h5 style={{color:'red'}}>Movie Already Exist</h5></div>}
+                {loginNotification &&
+                <div><h5 style={{color:'red'}}>You need to login</h5></div>}
                 </div>
                 <Button 
                 variant="outline-secondary" 
