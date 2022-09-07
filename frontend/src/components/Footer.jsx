@@ -1,6 +1,6 @@
 import React from 'react';
 import { CDBFooter, CDBBtn, CDBIcon, CDBBox } from 'cdbreact';
-import logo from './../assets/Untitled.png'
+import logo from './../assets/MGLogo.png'
 
 export const Footer = () => {
 

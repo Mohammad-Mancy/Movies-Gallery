@@ -11,6 +11,7 @@ import { clearToken } from './../features/user';
 import { reactLocalStorage } from 'reactjs-localstorage';
 import SearchMovie from './modal/SearchMovie';
 import { useNavigate } from 'react-router-dom'
+import logo from './../assets/MGLogo.png'
 
 
 function NavScroll() {
@@ -20,7 +21,7 @@ function NavScroll() {
   return (
     <Navbar expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">Movies Gallery</Navbar.Brand>
+        <Navbar.Brand href="/"><img src={logo} alt="logo" style={{width:'150px'}}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
