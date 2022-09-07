@@ -10,10 +10,13 @@ import { useDispatch } from 'react-redux';
 import { clearToken } from './../features/user';
 import { reactLocalStorage } from 'reactjs-localstorage';
 import SearchMovie from './modal/SearchMovie';
+import { useNavigate } from 'react-router-dom'
+
 
 function NavScroll() {
   const token = useSelector((state) => state.token.value)
   const dispatch = useDispatch();
+  const navigation = useNavigate()
   return (
     <Navbar expand="lg">
       <Container fluid>
@@ -59,6 +62,7 @@ function NavScroll() {
                 onClick={() =>{
                   dispatch(clearToken())
                   reactLocalStorage.set('token',"")
+                  navigation('/')
                 }}>Logout</h6>
                 }
               </NavDropdown.Item>
