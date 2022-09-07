@@ -69,7 +69,13 @@
 
 .card-top-rated{
   cursor: pointer;
+  transition: .5s;
 }
+.card-top-rated:hover{
+  transition: 0.2s;
+  transform: scale(.95);
+}
+
 .card{
   --bs-card-bg:#9d8d8f !important;
   color: #fff;
