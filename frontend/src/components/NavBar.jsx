@@ -30,7 +30,20 @@ function NavScroll() {
             navbarScroll
           >
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/main/popular-movies">Popular Movies</Nav.Link>
+            <NavDropdown title="Categories" id="navbarScrollingDropdownCat">
+              <NavDropdown.Item href="/main/popular-movies">
+              <span className='yellow-color-font' >Popular Movies</span>
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/main/top-rated-popular-movies">
+              <span className='yellow-color-font'>Top Rated Popular Movies</span>
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/main/movies-released-2022">
+              <span className='yellow-color-font'>Movies Released in 2022</span>
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/main/tv-series">
+              <span className='yellow-color-font'>TV Series</span>
+              </NavDropdown.Item>
+            </NavDropdown>
             <NavDropdown title="More" id="navbarScrollingDropdown">
               {!token?
               <>

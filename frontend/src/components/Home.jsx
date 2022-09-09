@@ -54,14 +54,6 @@ function Home() {
         />
     ))}
     </div>
-    <div className="category-container">
-    <h2>Categories</h2>
-    <div className='main-page-section-two'>
-      <MovieTopRatedCollection />
-      <Movies2022Card />
-      <TvSeriesCard />
-    </div>
-    </div>
     <Footer />
     </>
   )
