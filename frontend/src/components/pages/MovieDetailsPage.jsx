@@ -48,13 +48,15 @@ function MovieDetailsPage() {
     const [notificationExist,setNotificationExist] = React.useState(false)  
     const [loginNotification,setLoginNotification] = React.useState(false)  
 
+    const movieIdDetails = location.state.id
+
     let handleMoviesDetails = async () => {
         try {
             let res = await fetch('http://localhost:3000/api/movie/details',{
                 method: 'POST' ,
                 headers : {'Content-Type' : 'application/json'},
                 body : JSON.stringify({
-                    id: location.state.id
+                    id: movieIdDetails
                 })
             })   
             const data = await res.json()
@@ -84,7 +86,7 @@ function MovieDetailsPage() {
                 method : 'POST',
                 headers : {'Content-Type' : 'application/json'},
                 body : JSON.stringify({
-                    movie_id:location.state.id
+                    movie_id:movieIdDetails
                 })
             })
             const data = await res.json()
@@ -100,7 +102,7 @@ function MovieDetailsPage() {
     useEffect ( () => {
         handleMoviesDetails();
         handleActors();
-      });
+      },[]);
 
     let handleAddToGallery = async () => {
         if (userId === null) {
@@ -148,9 +150,9 @@ function MovieDetailsPage() {
     }
     
     if(!poster_path||!vote_average||!backdrop_path||!actors) {
-        <div className="spinner-div">
-        <Spinner animation="grow" />
-        </div>
+        return(<div className="spinner-div">
+                    <Spinner animation="grow" />
+                </div>)
     }
   return (
     <div>
