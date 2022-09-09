@@ -42,7 +42,7 @@ function Login() {
 
   return (
     <>
-      <Button variant="link" onClick={handleShow} className='login-btn yellow-color-font'>
+      <Button variant="link" onClick={handleShow} className='login-btn yellow-color-font font-size-rem'>
         Login
       </Button>
       <Modal show={show} onHide={handleClose}>
@@ -51,7 +51,7 @@ function Login() {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" >
+            <Form.Group className="mb-3 font-size-rem" >
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 type="email"
@@ -59,7 +59,7 @@ function Login() {
                 onChange={e => setEmail(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className="mb-3" >
+            <Form.Group className="mb-3 font-size-rem" >
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
@@ -70,10 +70,10 @@ function Login() {
         </Modal.Body>
         <Modal.Footer>
             <Signup />
-          <Button variant="secondary" onClick={handleClose} className="btn-close-form">
+          <Button variant="secondary" onClick={handleClose} className="btn-close-form font-size-rem">
             Close
           </Button>
-          <Button variant="primary" onClick={handleSubmit} className="btn-login">
+          <Button variant="primary" onClick={handleSubmit} className="btn-login font-size-rem">
             Login
           </Button>
         </Modal.Footer>

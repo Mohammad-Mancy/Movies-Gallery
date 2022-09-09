@@ -41,11 +41,12 @@ function SearchMovie() {
         <Form.Control
         type="search"
         placeholder="Search"
-        className="me-2"
+        className="me-2 font-size-rem"
         aria-label="Search"
         onChange={(e) => {setSearchMovie(e.target.value)}}
         />
         <Button 
+        className='font-size-rem'
         variant="outline-success" 
         onClick={handleSearching}
         >Search</Button>

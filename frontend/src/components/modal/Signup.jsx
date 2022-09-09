@@ -41,14 +41,14 @@ function Signup() {
 
   return (
     <>
-      <h6 onClick={handleShow} className='signup-link'>Create New Account</h6>
+      <h6 onClick={handleShow} className='signup-link font-size-rem'>Create New Account</h6>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Signup Form</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
-          <Form.Group className="mb-3">
+          <Form.Group className="mb-3 font-size-rem">
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="text"
@@ -57,7 +57,7 @@ function Signup() {
                 onKeyDown={e => e.stopPropagation()}
               />
             </Form.Group>
-            <Form.Group className="mb-3" >
+            <Form.Group className="mb-3 font-size-rem" >
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 type="email"
@@ -65,7 +65,7 @@ function Signup() {
                 onChange={e => setEmail(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-3 font-size-rem">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
@@ -78,11 +78,11 @@ function Signup() {
         {notification &&
             <div><h6 style={{color:'green',textAlign:'center'}}>Account created successfully</h6></div>}
         <Modal.Footer>
-          <h6 className='signup-link' onClick={handleClose}>Already Have An Account</h6>
-          <Button variant="secondary" onClick={handleClose} className="btn-close-form">
+          <h6 className='signup-link font-size-rem' onClick={handleClose}>Already Have An Account</h6>
+          <Button variant="secondary" onClick={handleClose} className="btn-close-form font-size-rem">
             Close
           </Button>
-          <Button variant="primary" onClick={handleSubmit} className="btn-signup">
+          <Button variant="primary" onClick={handleSubmit} className="btn-signup font-size-rem">
             Signup
           </Button>
         </Modal.Footer>

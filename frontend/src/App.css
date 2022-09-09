@@ -82,10 +82,11 @@
 }
 
 h1{
-  background-color: #faed26;
-  color: #46344e;
-  font-family: 'Croissant One', cursive !important;
+  background-image: linear-gradient(#faed26,#5a5560);
+  color: #5a5560;
+  font-family: 'Croissant One', cursive  !important;
   padding-bottom: 10px;
+  -webkit-text-stroke: 2px #46344e
 }
 
 a{
@@ -448,4 +449,28 @@ h2{
 .btn-close-form:hover{
   color: #faed26 !important;
   background-color: #46344e !important;
+}
+
+.font-size-rem{
+  font-size: 1.3rem;
+}
+.first-letter-account{
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 50%;
+  color: #46344e;
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #faed26;
+  margin-right: 10px;
+}
+.popup-welcome{
+  color: #faed26 !important;
+  background-color: #46344e;
+  font-size: 1.3rem;
 }
