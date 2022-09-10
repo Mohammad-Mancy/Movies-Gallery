@@ -1,6 +1,7 @@
 import React from 'react'
 import { Footer } from "./../Footer";
 import NavBar from "./../NavBar"
+import { useNavigate } from 'react-router-dom';
 
 function GenresPage() {
 
@@ -24,12 +25,22 @@ function GenresPage() {
     handleMoviesGenres();
   },[]);
 
+  const navigation = useNavigate()
+  const navigate = (id,name) => {
+    navigation('/movies/movie-by-genre',{
+      state:{
+        id:id,
+        name:name
+      }
+    })
+  }
+
   return (
     <div>
         <NavBar />
         <div className="genres-wrapper">
             {genres.map(({id,name})=>(
-              <span className='genre-card' key={id}>{name}</span>
+              <span onClick={ () => navigate(id,name)} className='genre-card' key={id}>{name}</span>
             ))}
         </div>
         <Footer />

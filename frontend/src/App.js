@@ -11,6 +11,7 @@ import MovieDetailsPage from './components/pages/MovieDetailsPage';
 import MyGallery from './components/pages/MyGallery';
 import Account from './components/pages/Account';
 import GenresPage from './components/pages/GenresPage';
+import MovieByGenre from './components/pages/MovieByGenre';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path='/main/tv-series' element={<TvSeries />}/>
           <Route path='/movies/movie-details-page' element={<MovieDetailsPage />}/>
           <Route path='/movies/genres' element={<GenresPage />}/>
+          <Route path='/movies/movie-by-genre' element={<MovieByGenre />}/>
         </Routes>
       </BrowserRouter>
     </div>
