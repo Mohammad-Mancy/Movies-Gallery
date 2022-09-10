@@ -42,9 +42,9 @@ ___
     - MongoDBCompass
     - Node JS v-14 or newer
 -  ### Installation
-    1. Navigate To the Directory you want to download and Clone
+    1. Navigate To the Directory you want to download in and Clone
     ```
-    git clone https://github.com/Mohammad-Mancy/food-oclock.git
+    git clone https://github.com/Mohammad-Mancy/Movies-Gallery.git
     ```
     2. Run the following command in the "backend"  folder to install NPM packages for the server:
     ```
