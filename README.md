@@ -41,6 +41,13 @@ ___
 -  ### Prerequisite 
     - MongoDBCompass
     - Node JS v-14 or newer
+-  ### Configuration
+    1. Create .env file like .env.sample file in backend folder
+    2. In .env file you'll create the following variables:
+        - PORT = 3000
+        - DB_CONNECT = mongodb://localhost:27017/"Your-DB-name"
+        - TOKEN_SECRET = "random-string"
+        - API_KEY = "your TMDB API key"
 -  ### Installation
     1. Navigate To the Directory you want to download in and Clone
     ```
