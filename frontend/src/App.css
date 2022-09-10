@@ -82,11 +82,13 @@
 }
 
 h1{
-  background-image: linear-gradient(#faed26,#5a5560);
+
+  background-color: #5a5560;
   color: #5a5560;
-  font-family: 'Croissant One', cursive  !important;
+  font-family: 'Croissant One', cursive !important;
   padding-bottom: 10px;
-  -webkit-text-stroke: 2px #46344e
+  -webkit-text-stroke: 1.5px #faed26;
+  margin-top: 12px !important;
 }
 
 a{
@@ -147,7 +149,6 @@ a{
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .inner-image{
   display: flex;
   position: absolute;
@@ -479,27 +480,47 @@ h2{
   height: 200px;
   text-align: center;
   text-transform: uppercase;
-  border-radius: 50%;
   color: #46344e;
-  font-size: 1.3rem;
+  font-size: 2rem;
   font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #faed26;
-  margin-right: 10px;
-  box-shadow: 0 0 20px 10px #46344e;
   transition: .3s;
+  margin: auto;
 }
 .genre-card:hover{
   transform: scale(.95);
   cursor: pointer;
   transition: .3s;
+  border-bottom: 25px solid #46344e;
+  border-top: 85px solid;
   opacity: .7;
+  color: #faed26;
 }
 .genres-wrapper{
+  background-image: url('./assets/genresBackground.jpg');
+  height: 100%; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  width: 60vw;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  margin: 5vh 10vw 5vh 10vw;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.background-image-genres-inner{
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.6) 100%, rgba(255, 255, 255, 0.6) 100%);
+  height: 100%; 
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  width: 60vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: auto;
 }

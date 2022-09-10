@@ -36,12 +36,14 @@ function GenresPage() {
   }
 
   return (
-    <div>
+    <div className='genres-page'>
         <NavBar />
         <div className="genres-wrapper">
+        <div className='background-image-genres-inner'>
             {genres.map(({id,name})=>(
               <span onClick={ () => navigate(id,name)} className='genre-card' key={id}>{name}</span>
             ))}
+        </div>
         </div>
         <Footer />
     </div>
