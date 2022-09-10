@@ -47,6 +47,7 @@ function NavScroll() {
             navbarScroll
           >
             <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/movies/genres">Genres</Nav.Link>
             <NavDropdown title="Categories" id="navbarScrollingDropdownCat" >
               <NavDropdown.Item href="/main/popular-movies">
               <span className='yellow-color-font font-size-rem' >Popular Movies</span>
