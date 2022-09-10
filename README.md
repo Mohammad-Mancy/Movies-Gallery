@@ -1,5 +1,4 @@
 # Movies Gallery <img style="width: 121px;" align="right" src="./frontend/src/assets/MGLogoMD.PNG">
-
 > ## Table of contents
 - [Overview](#overview)
 - [Technology used](#technologies-used)
