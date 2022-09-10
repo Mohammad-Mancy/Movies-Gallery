@@ -8,7 +8,8 @@ const {
     getMoviesDetailsById, 
     getMovieActors,
     getSearchedMovies,
-    getGenresList } = require('./controller')
+    getGenresList,
+    getMoviesByGenres } = require('./controller')
 
 const router = Router();
 
@@ -19,6 +20,7 @@ router.get('/movies/2022', getMovies2022 )
 router.get('/tv/series', getTvSeriesPopular )
 router.get('/movies/search?:searchMovie', getSearchedMovies )
 router.get('/movies/genres_list', getGenresList)
+router.get('/movies/movies_by_genre?:genreKey', getMoviesByGenres)
 
 router.post('/movie/credits', getMovieActors )
 router.post('/movie/details', getMoviesDetailsById )

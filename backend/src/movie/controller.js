@@ -126,6 +126,19 @@ async function getGenresList(req,res) {
   }
 }
 
+async function getMoviesByGenres(req,res) {
+  try {
+    const genreKey = await req.query.genreKey
+    const apiResponse = await fetch(
+      "https://api.themoviedb.org/3/discover/movie?api_key="+process.env.API_KEY+"&language=en-US&with_genres="+genreKey
+    )
+    const apiResponseJson = await apiResponse.json()
+    res.status(200).send({'response':apiResponseJson})
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 module.exports = {
     getAllMovies,
     getTopMovies,
@@ -135,5 +148,6 @@ module.exports = {
     getMoviesDetailsById,
     getMovieActors,
     getSearchedMovies,
-    getGenresList
+    getGenresList,
+    getMoviesByGenres
 }
