@@ -15,7 +15,7 @@ ___
 Movies gallery web app that does the following :
 
 - Browse, search for all movies.
-- Filter movies as cateigories and genres.
+- Filter movies as categories and genres.
 - Very considerate UI/UX performance, and responsive web app.
 - User can add movies to the local storage (MyGallery).
 - User can perform CRUD operations on the website's data and workflows.
