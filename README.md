@@ -12,7 +12,13 @@ ___
 
 > ## Overview
 
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel quod explicabo voluptate nesciunt quos aliquid modi optio. Laudantium, eius alias sit adipisci pariatur quidem iure autem cum dolorem minima similique?
+Movies gallery web app that does the following :
+
+- Browse, search for all movies.
+- Filter movies as cateigories and genres.
+- Very considerate UI/UX performance, and responsive web app.
+- User can add movies to the local storage (MyGallery).
+- User can perform CRUD operations on the website's data and workflows.
 
 ___
 
